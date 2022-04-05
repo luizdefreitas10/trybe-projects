@@ -1,8 +1,54 @@
 body {
-    background-color: rgb(253, 251, 251);
+    background-color: #18162C;
 }
 
 #cabecalho {
     top: 0;
-    position: fixed;
 }
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+p {
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #A78E70;
+    font-size: 20px;
+}
+
+ol, ul, table, a {
+    font-family: 'Open Sans', sans-serif;
+    color: #A78E70;
+}
+
+#titulo {
+    text-align: center;
+    padding: 30px;
+    background-color: #27494F;
+    color: #A78E70 ;
+}
+
+#minha_foto {
+    border: 2px solid #A78E70;
+    margin-left: 80px;
+    border-radius: 50px;
+}
+
+#rodape a {
+    margin: 20px;
+    display: inline-block;
+    margin-left: 250px;
+    background-color: #27494F;
+    padding: 20px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.table-content {
+    border: 2px solid #27494F);
+    margin-left: 700px;
+}
+
+
