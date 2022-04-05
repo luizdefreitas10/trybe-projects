@@ -17,7 +17,7 @@ p {
 }
 
 ol, ul, table, a {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     color: #A78E70;
 }
 
@@ -33,12 +33,14 @@ ol, ul, table, a {
     margin-left: 80px;
     border-radius: 50px;
     width: 500px;
+    position: relative;
+    top: 50px;
 }
 
 #rodape a {
     margin: 20px;
     display: inline-block;
-    margin-left: 250px;
+    margin-left: 175px;
     background-color: #27494F;
     padding: 20px;
     margin-top: 60px;
@@ -49,12 +51,12 @@ ol, ul, table, a {
 
 .table-content {
     border: 2px solid #27494F);
-    margin-left: 700px;
+    margin-left: 100px;
+    margin-top: 40px;
 }
 
 .div-content {
-    border: 2px solid black;
-    height: 615px;
+    height: 580px;
 }
 
 .div-content p {
@@ -65,15 +67,14 @@ ol, ul, table, a {
     bottom: 500px;
 }
 
-#licoes_aprendidas {
+#licoes_aprendidas, #licoes_a_aprender {
     margin-left: 650px;
     position: relative;
     bottom: 500px;
 }
 
-#licoes_a_aprender {
-    margin-left: 650px;
-    position: relative;
-    bottom: 500px;
+.aclass-margin p {
+    margin-left: 30px;
+    text-align: justify;
+    margin-right: 30px;
 }
-
