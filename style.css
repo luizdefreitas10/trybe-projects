@@ -32,6 +32,7 @@ ol, ul, table, a {
     border: 2px solid #A78E70;
     margin-left: 80px;
     border-radius: 50px;
+    width: 500px;
 }
 
 #rodape a {
@@ -50,3 +51,29 @@ ol, ul, table, a {
     border: 2px solid #27494F);
     margin-left: 700px;
 }
+
+.div-content {
+    border: 2px solid black;
+    height: 615px;
+}
+
+.div-content p {
+    margin-left: 650px; 
+    text-align: justify;
+    margin-right: 30px;
+    position: relative;
+    bottom: 500px;
+}
+
+#licoes_aprendidas {
+    margin-left: 650px;
+    position: relative;
+    bottom: 500px;
+}
+
+#licoes_a_aprender {
+    margin-left: 650px;
+    position: relative;
+    bottom: 500px;
+}
+
