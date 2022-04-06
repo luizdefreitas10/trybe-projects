@@ -19,6 +19,7 @@ p {
 ol, ul, table, a {
     font-family: 'Montserrat', sans-serif;
     color: #A78E70;
+    font-size: 15px;
 }
 
 #titulo {
@@ -34,19 +35,19 @@ ol, ul, table, a {
     border-radius: 50px;
     width: 500px;
     position: relative;
-    top: 50px;
+    top: 30px;
 }
 
 #rodape a {
     margin: 20px;
     display: inline-block;
-    margin-left: 175px;
+    margin-left: 125px;
     background-color: #27494F;
     padding: 20px;
     margin-top: 60px;
     margin-bottom: 60px;
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .table-content {
@@ -56,7 +57,7 @@ ol, ul, table, a {
 }
 
 .div-content {
-    height: 580px;
+    height: 560px;
 }
 
 .div-content p {
