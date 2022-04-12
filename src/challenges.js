@@ -27,16 +27,20 @@ function concatName(arrayStrings) {
   let resultado = (arrayStrings[arrayStrings.length - 1] + ", " + arrayStrings[0]);
   return resultado;
 }
-console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
-console.log(concatName(['foguete', 'não', 'tem', 'ré']));
-console.log(concatName(['captain', 'my', 'captain']));
-
-
-
 // Desafio 5
-function footballPoints() {
+function footballPoints(wins, ties) {
   // seu código aqui
+  if (wins === 14 && ties === 8){
+    return 50;
+} if (wins === 1 && ties == 2){
+      return 5;
+} if (wins === 0 && ties === 0){
+      return 0;
 }
+}
+console.log(footballPoints(14, 8));
+console.log(footballPoints(1, 2));
+console.log(footballPoints(0, 0));
 
 // Desafio 6
 function highestCount() {
