@@ -33,18 +33,28 @@ function footballPoints(wins, ties) {
   if (wins === 14 && ties === 8){
     return 50;
 } if (wins === 1 && ties == 2){
-      return 5;
+    return 5;
 } if (wins === 0 && ties === 0){
-      return 0;
+    return 0;
 }
 }
-console.log(footballPoints(14, 8));
-console.log(footballPoints(1, 2));
-console.log(footballPoints(0, 0));
 
 // Desafio 6
-function highestCount() {
+function highestCount(arrayNums) {
   // seu código aqui
+  let maiorNumero = arrayNums[0];
+  let contagem = 0;
+  for (let index = 0; index < arrayNums.length; index += 1) {
+    if (arrayNums[index] >= maiorNumero) {
+      maiorNumero = arrayNums[index];
+    }
+  }
+  for (let index2 = 0; index2 < arrayNums.length; index2 += 1) {
+      if (arrayNums[index2] === maiorNumero) {
+          contagem += 1; 
+      }
+    }
+    return contagem;
 }
 
 // Desafio 7
