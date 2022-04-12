@@ -14,14 +14,14 @@ function calcArea(base, height) {
   let areaTri = (base * height) / 2;
   return areaTri;
 }
-
-
 // Desafio 3
-function splitSentence() {
+function splitSentence(string) {
   // seu código aqui
+  let array = string.split(" ");
+  return array;
 }
-
 // Desafio 4
+
 function concatName() {
   // seu código aqui
 }
