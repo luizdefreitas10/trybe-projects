@@ -22,9 +22,16 @@ function splitSentence(string) {
 }
 // Desafio 4
 
-function concatName() {
+function concatName(arrayStrings) {
   // seu código aqui
+  let resultado = (arrayStrings[arrayStrings.length - 1] + ", " + arrayStrings[0]);
+  return resultado;
 }
+console.log(concatName(['Lucas', 'Cassiano', 'Ferraz', 'Paolillo']));
+console.log(concatName(['foguete', 'não', 'tem', 'ré']));
+console.log(concatName(['captain', 'my', 'captain']));
+
+
 
 // Desafio 5
 function footballPoints() {
