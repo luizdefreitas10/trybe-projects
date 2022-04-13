@@ -71,12 +71,24 @@ if (distancia1 < distancia2) {
   }
 }
 
-
+// [2, 15, 7, 9, 45] 
 // Desafio 8
-function fizzBuzz() {
+function fizzBuzz(numeros) {
   // seu código aqui
+  let resultado = [];
+  for (let index = 0; index < numeros.length; index += 1) {
+    if (numeros[index] % 3 === 0 && numeros[index] % 5 === 0) { 
+    resultado.push("fizzBuzz");
+  } else if (numeros[index] % 3 === 0) {
+       resultado.push("fizz");
+  } else if (numeros[index] % 5 === 0) {
+      resultado.push("buzz");
+  } else {
+      resultado.push("bug!");
+  }
 }
-
+return resultado;
+}
 // Desafio 9
 function encode() {
   // seu código aqui
@@ -103,3 +115,4 @@ module.exports = {
   splitSentence,
   techList,
 };
+
