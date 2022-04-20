@@ -7,11 +7,24 @@
     height: 70px;
     border: 1px solid black;
     display: inline-block;
-}
+} 
 
-.quadradoPixels {
-    width: 400px;
-    height: 400px;
+/* .quadroPixels {
+    width: 170px;
+    height: 227px;
     border: 2px solid black;
     margin-top: 20px;
+} */
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    display: inline-block;
+    background-color: white;
+    margin-left: 20px;
+}  
+
+#pixel-board {
+    margin-top: 30px;
 }
