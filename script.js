@@ -25,7 +25,7 @@ function gerarQuadro(tamanho) {
     }
 }
 
-gerarQuadro(5); 
+
 
 // window.onload = corPadrao
 
@@ -38,3 +38,32 @@ gerarQuadro(5);
 //         event.target.id 
 //     } 
 // } // apliquei a class selected na cor preta, dentro do HTML. 
+
+function selectColor() {
+    const color = document.querySelectorAll(".color");
+    for (let i = 0; i < color.length; i += 1) {
+        color[0].classList.add('selected');
+        color[i].addEventListener('click', function (event) {
+          const colorSelected = document.querySelector('.selected');
+          colorSelected.classList.remove('selected');
+          event.target.classList.add('selected');
+        });
+      }
+    }
+
+    function putColor() {
+        const pixels = document.querySelectorAll(".pixel"); 
+        for (let index = 0; index < pixels.length; index++) {
+            pixels[index].addEventListener("click", function putColor2 (event) {
+                const selectedColor = document.querySelector(".selected").style.backgroundColor;
+                event.target.style.backgroundColor = selectedColor;
+            });  
+        }
+    }
+
+window.onload = function () {
+gerarQuadro(5);
+selectColor();
+putColor();
+}
+
