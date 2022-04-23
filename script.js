@@ -12,6 +12,10 @@ corPreta.style.backgroundColor = "black";
 
 const pixelBoard = document.querySelector("#pixel-board");
 
+function loadPage () {
+    alert ("Página carregada.");
+}
+
 function gerarQuadro(tamanho) {
     for (let linha = 0; linha < tamanho; linha += 1) {
         const quadroPixel = document.createElement("div");
@@ -24,20 +28,6 @@ function gerarQuadro(tamanho) {
         }
     }
 }
-
-
-
-// window.onload = corPadrao
-
-// function corPadrao () {
-//     corPreta.className = "selected";
-//     // corPreta.classList.remove("selected");
-//     // corPreta.classList.add(".selected");
-//     corPreta.addEventListener("click", setBlackColor())
-//     function setBlackColor() {
-//         event.target.id 
-//     } 
-// } // apliquei a class selected na cor preta, dentro do HTML. 
 
 function selectColor() {
     const color = document.querySelectorAll(".color");
@@ -54,16 +44,29 @@ function selectColor() {
     function putColor() {
         const pixels = document.querySelectorAll(".pixel"); 
         for (let index = 0; index < pixels.length; index++) {
-            pixels[index].addEventListener("click", function putColor2 (event) {
+            pixels[index].addEventListener("click", function (event) {
                 const selectedColor = document.querySelector(".selected").style.backgroundColor;
                 event.target.style.backgroundColor = selectedColor;
             });  
         }
     }
 
+    function cleanButton () {
+       const buttonClear = document.getElementById("clear-board");
+       buttonClear.addEventListener("click", function (event) {
+           const pixels = document.querySelectorAll(".pixel");
+           for (let index = 0; index < pixels.length; index +=1) {
+               const whiteningPixels = pixels[index];
+               whiteningPixels.style.backgroundColor = "white";
+           }
+       }); 
+    }
+
 window.onload = function () {
+loadPage();
 gerarQuadro(5);
 selectColor();
 putColor();
+cleanButton();
 }
 
