@@ -2,3 +2,6 @@ button {
     display: block;
 }
 
+.selected {
+    background-color: grey;
+}
