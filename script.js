@@ -5,11 +5,18 @@ const inputItem = document.getElementById("texto-tarefa");
 function createLi() {
     createButton.addEventListener('click', function () {
         const newLi = document.createElement("li");
+        newLi.className = "liClass"
         listItens.appendChild(newLi);
         newLi.innerHTML = inputItem.value;
         inputItem.value = "";
     });
 
+}
+
+function changeTextColor () {
+    listItens.addEventListener ('click', function (event) {
+        event.target.style.backgroundColor = "grey";
+    })
 }
 
 function displayAlert () {
@@ -19,5 +26,6 @@ function displayAlert () {
 window.onload = function () {
     createLi ();
     displayAlert ();
+    changeTextColor ();
 }
 
