@@ -2,6 +2,7 @@ const createButton = document.getElementById("criar-tarefa");
 const listItens = document.getElementById("lista-tarefas");
 const inputItem = document.getElementById("texto-tarefa");
 const removeButton = document.getElementById("apaga-tudo");
+const taskButton = document.getElementById("remover-finalizados");
 
 
 function createLi() {
@@ -38,7 +39,7 @@ function selectClass() {
     });
 }
 
-function deleteRisk () {
+function deleteRisk() {
     listItens.addEventListener('dblclick', function (event) {
         if (event.target.classList.contains('completed')) {
             event.target.classList.remove('completed');
@@ -47,14 +48,24 @@ function deleteRisk () {
         }
     })
 }
-    
-function removeItens () {
+
+function removeItens() {
     removeButton.addEventListener('click', function (event) {
         const itensLi = document.querySelectorAll('#lista-tarefas>li');
-        for (let index = 0; index < itensLi.length; index +=1) {
+        for (let index = 0; index < itensLi.length; index += 1) {
             const missionLi = itensLi[index];
             missionLi.parentNode.removeChild(missionLi);
-        }      
+        }
+    })
+}
+
+function finishTasks() {
+    taskButton.addEventListener('click', function (event) {
+        const taskCompleted = document.querySelectorAll(".completed");
+        for (let index = 0; index < taskCompleted.length; index += 1) {
+            const taskFor = taskCompleted[index];
+            taskFor.parentNode.removeChild(taskFor);
+        }
     })
 }
 
@@ -66,7 +77,8 @@ window.onload = function () {
     createLi();
     displayAlert();
     selectClass();
-    deleteRisk ();
-    removeItens ();
+    deleteRisk();
+    removeItens();
+    finishTasks();
 }
 
