@@ -14,12 +14,18 @@ function createLi() {
 
 }
 
-function changeTextColor() {
- const selectedLi = document.querySelectorAll(".selected");   listItens.addEventListener('click', function (event) {
-        event.target.className = "selected"
-        //event.target.style.backgroundColor = "grey";
-    })
-}
+// function changeTextColor() {
+//  const selectedLi = document.querySelectorAll(".selected");   listItens.addEventListener('click', function (event) {
+//         event.target.className = "selected"
+//         //event.target.style.backgroundColor = "grey";
+//     })
+// }
+
+// function riskItem () {
+//     listItens.addEventListener('dblclick', function (event) {
+//         event.target.classList.add("completed");
+//     }) 
+// }
 
 function selectClass() {
     listItens.addEventListener('click', function (event) {
@@ -31,6 +37,17 @@ function selectClass() {
     });
 }
 
+function deleteRisk () {
+    listItens.addEventListener('dblclick', function (event) {
+        if (event.target.classList.contains('completed')) {
+            event.target.classList.remove('completed');
+        } else {
+            event.target.classList.add('completed');
+        }
+    })
+}
+    
+
 function displayAlert() {
     alert("Page loaded.")
 }
@@ -38,7 +55,7 @@ function displayAlert() {
 window.onload = function () {
     createLi();
     displayAlert();
-    changeTextColor();
     selectClass();
+    deleteRisk ();
 }
 

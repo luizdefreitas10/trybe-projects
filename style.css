@@ -1,7 +1,42 @@
 button {
-    display: block;
+    margin-left: 10px;
+    margin-bottom: 10px;
 }
 
 .selected {
     background-color: grey;
+}
+
+body {
+    background-color: blueviolet;
+}
+
+.header-content-div {
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.header-content {
+    text-align: center;
+    background-color: grey;
+    border: 2px solid black;
+    padding: 5px;
+    font-size: 30px;   
+}
+
+#funcionamento {
+    font-size: 20px;
+    margin-left: 10px;
+}
+
+#texto-tarefa {
+    margin-left: 10px;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+#criar-tarefa {
+    text-align: left;
 }
