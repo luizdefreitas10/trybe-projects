@@ -1,6 +1,7 @@
 const createButton = document.getElementById("criar-tarefa");
 const listItens = document.getElementById("lista-tarefas");
 const inputItem = document.getElementById("texto-tarefa");
+const removeButton = document.getElementById("apaga-tudo");
 
 
 function createLi() {
@@ -47,6 +48,15 @@ function deleteRisk () {
     })
 }
     
+function removeItens () {
+    removeButton.addEventListener('click', function (event) {
+        const itensLi = document.querySelectorAll('#lista-tarefas>li');
+        for (let index = 0; index < itensLi.length; index +=1) {
+            const missionLi = itensLi[index];
+            missionLi.parentNode.removeChild(missionLi);
+        }      
+    })
+}
 
 function displayAlert() {
     alert("Page loaded.")
@@ -57,5 +67,6 @@ window.onload = function () {
     displayAlert();
     selectClass();
     deleteRisk ();
+    removeItens ();
 }
 
