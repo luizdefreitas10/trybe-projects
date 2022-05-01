@@ -91,22 +91,31 @@ function newSquare() {
         }
     })
 }
-// function setSquareNumbers(number) {
-//  const inputButton = document.getElementById("board-size");
-// const quadradoDePixels = document.querySelectorAll(".pixel");
-//  for (let indexLine = 0; indexLine < number.length; indexLine += 1) {
-//     const novoQuadradoLinha = document.createElement("div");
-//     pixelBoard.appendChild(novoQuadradoLinha);
-//    for (let indexColumn = 0; indexColumn < number.length; indexColumn += 1) {
-//        const novoQuadradoColuna = document.createElement("div");
-//        pixel.className = "pixel";
-//       // pixelBoard.appendChild(novoQuadradoColuna);
 
-// }
+// referencias que ajudaram a criar a paleta de cores aleatoriamente: 
+// https://wallacemaxters.com.br/blog/48/como-gerar-cores-aleatorias-no-javascript 
+// https://www.youtube.com/watch?v=tUJvE4xfTgo - video explicando a criacao de cores aleatorias para o backgroundColor de um body do html.
 
-//  }
+function generateRandomColors1 () {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    document.getElementsByClassName("color")[1].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+}
 
-// }
+function generateRandomColors2 () {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    document.getElementsByClassName("color")[2].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+}
+
+function generateRandomColors3 () {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    document.getElementsByClassName("color")[3].style.backgroundColor = "rgb(" + r + "," + g + "," + b + ")";
+}
 
 window.onload = function () {
     loadPage();
@@ -115,5 +124,7 @@ window.onload = function () {
     putColor();
     cleanButton();
     newSquare();
+    generateRandomColors1();
+    generateRandomColors2();
+    generateRandomColors3();
 }
-
