@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,27 +8,31 @@
     <link rel="stylesheet" href="style.css" class="css">
     <title>Project Pixels Art</title>
 </head>
+
 <body>
     <header>
         <h1 id="title">Paleta de Cores</h1>
 
     </header>
-    
+
     <main id="color-palette">
         <div class="color selected"></div>
         <div class="color"></div>
         <div class="color"></div>
-        <div class="color"></div>   
+        <div class="color"></div>
     </main>
-    
-    <button id="clear-board">Limpar</button>
-    
-    <section id="pixel-board">
-        
-    </section>
-    
 
+    <button id="clear-board">Limpar</button>
+
+    <br>
+
+    <label for="board-size">Escolha quantos pixels você deseja: </label>
+    <input type="number" min="1" id="board-size" class="editInput">
+    <button type="submit" id="generate-board">VQV</button>
+
+    <section id="pixel-board"></section>
 
     <script src="script.js"></script>
 </body>
+
 </html>
