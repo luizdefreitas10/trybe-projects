@@ -75,15 +75,19 @@ function newSquare() {
         const inputValue = inputInfo.value;
         if (inputValue === '') {
             alert('Board inválido!')
-            gerarQuadro(5);
+            gerarQuadro(5)
+            putColor();
         } else if (inputValue < 5) {
             alert('5 é o tamanho mínimo permitido.')
             gerarQuadro(5);
+            putColor();
         } else if (inputValue > 50) {
             alert('50 é o tamanho máximo permitido.')
             gerarQuadro(50);
+            putColor();
         } else {
             gerarQuadro(inputValue);
+            putColor();
         }
     })
 }
