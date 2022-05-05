@@ -10,12 +10,12 @@
   height: 95px;
   width: 100%;
   background-color: rgb(50, 167, 145);
-  /* border: 2px solid blue; */
+/* border: 2px solid blue; */
   align-items: center;
 }
 
 .trybewarts-header-logo {
-height: 80px;
+  height: 80px;
 }
 
 .trybewarts-login {

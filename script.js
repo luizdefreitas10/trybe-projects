@@ -2,8 +2,6 @@ const buttonEntrar = document.querySelector('.btn');
 const emailInput = document.querySelector('.email-class');
 const passInput = document.querySelector('.pass-class');
 // console.log(buttonEntrar);
-buttonEntrar.addEventListener('click', showAlert);
-
 function showAlert(event) {
   event.preventDefault();
   if (emailInput.value === '' || passInput.value === '') {
@@ -12,6 +10,8 @@ function showAlert(event) {
     alert('Olá, Tryber!');
   }
 }
+
+buttonEntrar.addEventListener('click', showAlert);
 
 function pageLoaded() {
   alert('Página carregada.');
