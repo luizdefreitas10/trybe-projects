@@ -17,7 +17,6 @@ function pageLoaded() {
   alert('Página carregada.');
 }
 
-window.onload = function () {
-  // showAlert();
+window.onload = function loadContent() {
   pageLoaded();
 }

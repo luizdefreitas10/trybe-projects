@@ -10,7 +10,6 @@
   height: 95px;
   width: 100%;
   background-color: rgb(50, 167, 145);
-/* border: 2px solid blue; */
   align-items: center;
 }
 
@@ -20,8 +19,6 @@
 
 .trybewarts-login {
   display: flex;
-  /* width: 100%; */
-  /* border: 2px solid green; */
 }
 
 .trybewarts-header-title {
@@ -53,5 +50,4 @@ main {
 
 #trybewarts-forms-logo {
   height: 500px;
-  /* border: 2px solid black; */
 }
