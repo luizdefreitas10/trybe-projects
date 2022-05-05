@@ -51,3 +51,19 @@ main {
 #trybewarts-forms-logo {
   height: 500px;
 }
+
+#input-name {
+  width: 40%;
+}
+
+#input-lastname {
+  width: 40%;
+}
+
+#input-email {
+  width: 40%;
+}
+
+#house {
+  width: 40%;
+}
