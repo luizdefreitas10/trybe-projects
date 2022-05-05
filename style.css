@@ -6,13 +6,21 @@
 
 .header {
   display: flex;
+  justify-content: space-between;
   height: 100px;
   width: 100%;
   background-color: rgb(50, 167, 145);
+  border: 2px solid blue;
 }
 
 .trybewarts-header-logo {}
 
 .trybewarts-login {
   display: flex;
+  /* width: 100%; */
+  border: 2px solid green;
+}
+
+.trybewarts-header-title {
+  justify-content: center;
 }
