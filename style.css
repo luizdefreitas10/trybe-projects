@@ -67,3 +67,13 @@ main {
 #house {
   width: 40%;
 }
+
+#label-family {
+  display: flex;
+  flex: column wrap;
+  width: 60%;
+}
+
+.familia {
+  width: 40%;
+}
