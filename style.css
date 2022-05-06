@@ -1,16 +1,24 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: fantasy;
 }
 
+body {
+  background-color: lightgray;
+}
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   height: 95px;
   width: 100%;
   background-color: rgb(50, 167, 145);
   align-items: center;
+}
+
+header h1 {
+  color: white;
 }
 
 .trybewarts-header-logo {
@@ -82,6 +90,84 @@ main {
 
 #mae3 {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  margin-left: 10px;
+}
+
+#mae {
+  margin-left: 10px;
+}
+
+#mae2 {
+  margin-left: 10px;
+}
+
+#mae4 {
+  margin: 10px;
+}
+
+#certeza {
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.trybewarts-classe {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  margin-top: 150px;
+}
+
+.h1-forms {
+  margin-left: 30px;
+  padding: 30px;
+}
+
+.div-evaluation-forms {
+  margin-left: 170px;
+}
+
+.div-family {
+  margin-left: 170px;
+}
+
+.div-learning {
+  margin-left: 170px;
+}
+
+.div-evaluation-trybewarts {
+  margin-left: 170px;
+  display: flex;
+  /* flex-flow: row wrap; */
+}
+
+.div-coments {
+  margin-left: 170px;
+}
+
+.div-agree {
+  margin-left: 170px;
+}
+#submit-btn {
+  width: 100%;
+  border-radius: 5px;
+  background: purple;
+  color: white;
+  margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.footer-style {
+  height: 50px;
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(72, 53, 53);
+}
+
+footer p {
+  color: white;
 }

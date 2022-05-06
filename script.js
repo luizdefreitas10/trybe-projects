@@ -18,5 +18,5 @@ function pageLoaded() {
 }
 
 window.onload = function loadContent() {
-  pageLoaded();
+  // pageLoaded();
 };
