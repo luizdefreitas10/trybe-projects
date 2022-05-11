@@ -12,6 +12,26 @@
 */
 // iniciando o projeto, VQV!
 
-const average = () => {};
+// ex: [3, 4, 5];
+
+const average = (array) => {
+  let sum = 0;
+  let resultAverage = 0;
+  if (array.length === 0) {
+    return undefined;
+  }
+  for (let index = 0; index < array.length; index += 1) {
+    let element = typeof array[index];
+    if (element === 'number') {
+    sum += array[index];
+    resultAverage = sum / array.length;
+    } else {
+      return undefined;
+    }
+  }
+  return Math.round(resultAverage); // https://www.alura.com.br/artigos/formatando-numeros-no-javascript
+};
+
+console.log(average([]));
 
 module.exports = average;
