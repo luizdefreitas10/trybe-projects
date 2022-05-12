@@ -37,9 +37,9 @@ const calculator = (number1, number2) => {
   const objectNumber = {
     sum: number1 + number2,
     mult: number1 * number2,
-    div: Math.floor(number1 / number2), //https://www.alura.com.br/artigos/formatando-numeros-no-javascript
+    div: Math.floor(number1 / number2), // https://www.alura.com.br/artigos/formatando-numeros-no-javascript
     sub: number1 - number2,
-  }
+  };
   // console.log(objectNumber);
   return objectNumber;
 };
