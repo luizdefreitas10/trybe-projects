@@ -3,7 +3,7 @@ A função getCharacter recebe uma string que representa o nome de um personagem
 
 O retorno será de acordo com a seguinte relação:
 
- Parâmetro  |      Nome       |    Classe   |              Frases
+ Parâme tro  |     Nome       |    Classe   |              Frases
 ----------------------------------------------------------------------------------
    Arya     |   Arya Stark    |    Rogue    | 'Not today', 'A girl has no name.'
   Brienne   |  Brienne Tarth  |    Knight   | 'Im No Lady, Your Grace.', 'I, Brienne Of Tarth, Sentence You To Die.'
@@ -67,5 +67,7 @@ const getCharacter = (name) => {
 
   return undefined;
 };
+
+// console.log(getCharacter('Arya'));
 
 module.exports = getCharacter;
