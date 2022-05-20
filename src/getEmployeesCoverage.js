@@ -5,3 +5,4 @@ function getEmployeesCoverage() {
 }
 
 module.exports = getEmployeesCoverage;
+
