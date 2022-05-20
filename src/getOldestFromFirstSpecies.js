@@ -5,4 +5,3 @@ function getOldestFromFirstSpecies(id) {
 }
 
 module.exports = getOldestFromFirstSpecies;
-
