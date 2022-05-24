@@ -22,7 +22,7 @@ describe('Testes da função HandlerElephants', () => {
   it('Verifica se retorna undefined quando não recebe parâmetro', () => {
     expect(handlerElephants()).toBeUndefined();
   });
-  it('Verifica se o tipo primitivo do parâmetro é diferente de uma string', () => {
+  it('Verifica se o tipo do parâmetro é diferente de uma string', () => {
     expect(handlerElephants(10)).toBe('Parâmetro inválido, é necessário uma string');
   });
   it('Verifica se retorna null quando o parâmetro passado nao é encontrado', () => {
