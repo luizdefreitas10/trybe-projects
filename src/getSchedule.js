@@ -38,6 +38,6 @@ function getSchedule(scheduleTarget) {
     return selectedAnimal.availability;
   }
 }
-console.log(getSchedule('Monday'));
+// console.log(getSchedule('Monday'));
 
 module.exports = getSchedule;
