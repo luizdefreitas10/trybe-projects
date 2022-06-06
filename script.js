@@ -1,9 +1,3 @@
-// const { fetchProducts } = require("./helpers/fetchProducts");
-
-// const { fetchItem } = require("./helpers/fetchItem");
-
-// const { fetchItem } = require("./helpers/fetchItem");
-
 const createProductImageElement = (imageSource) => {
   const img = document.createElement('img');
   img.className = 'item__image';
@@ -34,6 +28,7 @@ const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').inn
 
 const cartItemClickListener = (event) => {
   const theTarget = event.target;
+  // console.log(theTarget);
   theTarget.remove();
 };
 
