@@ -88,6 +88,7 @@ const cleanCart = () => {
   esvaziar.addEventListener('click', () => {
     const itens = document.querySelector('.cart__items');
     itens.innerHTML = '';
+    localStorage.removeItem('cartItems');
   });
 };
 
@@ -96,6 +97,3 @@ window.onload = () => {
   getTheLocal();
   cleanCart();
 };
-
-// pegar os items do carrinho
-// enviar os itens do carrinho para o localstorage
