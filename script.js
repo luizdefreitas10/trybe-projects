@@ -28,7 +28,6 @@ const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').inn
 
 const cartItemClickListener = (event) => {
   const theTarget = event.target;
-  // console.log(theTarget);
   theTarget.remove();
 };
 
@@ -40,20 +39,17 @@ const createCartItemElement = ({ sku, name, salePrice }) => {
   return li;
 };
 
-// const sentToLocal = () => {
-//   const cartItems = document.querySelector('.cart__items').innerHTML;
-//   const stringfyCartItems = JSON.stringify(cartItems);
-//   localStorage.setItem('cartItems', stringfyCartItems);
-//   // console.log(stringfyCartItems);
-//   // console.log(localStorage);
-// };
+const sentToLocal = () => {
+  const cartItems = document.getElementById('cart-id').innerHTML;
+  localStorage.setItem('cartItems', cartItems);
+};
 
-// const getTheLocal = () => {
-//   const olCartItems = document.getElementById('cart-id');
-//   const local = localStorage.getItem('cartItems');
-//   const parseLocal = JSON.parse(local);
-//   olCartItems.appendChild(createCartItemElement(parseLocal));
-// };
+const getTheLocal = () => {
+  const olCartItems = document.getElementById('cart-id');
+  const local = localStorage.getItem('cartItems');
+  olCartItems.innerHTML = local;
+  olCartItems.addEventListener('click', cartItemClickListener);
+};
 
 const toCartItems = () => {
   const cartItems = document.querySelector('.cart__items');
@@ -62,15 +58,13 @@ const toCartItems = () => {
     button.addEventListener('click', async () => {
       const selectedItem = button.parentElement.firstElementChild.innerHTML;
       const selectedData = await fetchItem(selectedItem);
-      // console.log(selectedItem);
       const newItem = {
         sku: selectedData.id,
         name: selectedData.title,
         salePrice: selectedData.price,
       };
       cartItems.appendChild(createCartItemElement(newItem));
-      // sentToLocal();
-      // saveCartItems(newItem);
+      sentToLocal();
     });
   });
 };
@@ -99,7 +93,7 @@ const cleanCart = () => {
 
 window.onload = () => {
   gettingProductData();
-  // getTheLocal();
+  getTheLocal();
   cleanCart();
 };
 
