@@ -24,8 +24,6 @@ const createProductItemElement = ({ sku, name, image }) => {
   return section;
 };
 
-const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerText;
-
 const calculatePrice = () => {
   const tagTotalPrice = document.querySelector('.total-price');
   const liCartItem = document.querySelectorAll('.cart__item');
@@ -85,9 +83,21 @@ const toCartItems = () => {
   });
 };
 
+const loadingFunction = () => {
+  const loading = createCustomElement('p', 'loading', 'carregando...');
+  const sectionItems = document.querySelector('.items');
+  sectionItems.appendChild(loading);
+};
+
+const deletingLoading = () => {
+  const loadingText = document.querySelector('.loading');
+  loadingText.remove();
+};
+
 const gettingProductData = async () => {
   const creatingProductSection = document.querySelector('.items');
   const jsonResults = await fetchProducts('computador');
+  deletingLoading();
   jsonResults.results.forEach((element) => {
     const product = {
       sku: element.id,
@@ -119,6 +129,7 @@ const createHtmlTotalPrice = () => {
 };
 
 window.onload = () => {
+  loadingFunction();
   gettingProductData();
   getLocalStorage();
   cleanCart();
