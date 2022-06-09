@@ -73,7 +73,7 @@ const toCartItems = () => {
 const gettingProductData = async () => {
   const creatingProductSection = document.querySelector('.items');
   const jsonResults = await fetchProducts('computador');
-  jsonResults.forEach((element) => {
+  jsonResults.results.forEach((element) => {
     const product = {
       sku: element.id,
       name: element.title,
