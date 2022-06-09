@@ -31,8 +31,6 @@ const calculatePrice = () => {
   liCartItem.forEach((li) => {
     const resultForEach = li.innerHTML.split('$');
     totalPrice += parseFloat(resultForEach[1]);
-    // console.log(resultForEach);
-    // console.log(totalPrice);
   });
 tagTotalPrice.innerText = parseFloat(totalPrice);
 };
@@ -70,7 +68,6 @@ const toCartItems = () => {
     button.addEventListener('click', async () => {
       const selectedItem = button.parentElement.firstElementChild.innerHTML;
       const selectedData = await fetchItem(selectedItem);
-      // console.log(selectedData);
       const newItem = {
         sku: selectedData.id,
         name: selectedData.title,
@@ -111,7 +108,6 @@ const gettingProductData = async () => {
 
 const cleanCart = () => {
   const esvaziar = document.querySelector('.empty-cart');
-  // console.log(esvaziar);
   esvaziar.addEventListener('click', () => {
     const totalPrice = document.querySelector('.total-price');
     const itens = document.querySelector('.cart__items');
