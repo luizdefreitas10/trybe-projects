@@ -65,6 +65,7 @@ const toCartItems = () => {
       };
       cartItems.appendChild(createCartItemElement(newItem));
       sentToLocal();
+      calculatePrice();
     });
   });
 };

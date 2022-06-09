@@ -3,7 +3,7 @@ const fetchProducts = async (param) => {
   const endpoint = `https://api.mercadolibre.com/sites/MLB/search?q=${param}`;
   const response = await fetch(endpoint);
   const responseJson = await response.json();
-  return responseJson.results;
+  return responseJson;
 } catch (error) {
   return error;
 }
