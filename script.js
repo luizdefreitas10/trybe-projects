@@ -26,9 +26,23 @@ const createProductItemElement = ({ sku, name, image }) => {
 
 const getSkuFromProductItem = (item) => item.querySelector('span.item__sku').innerText;
 
+const calculatePrice = () => {
+  const tagTotalPrice = document.querySelector('.total-price');
+  const liCartItem = document.querySelectorAll('.cart__item');
+  let totalPrice = 0;
+  liCartItem.forEach((li) => {
+    const resultForEach = li.innerHTML.split('$');
+    totalPrice += parseFloat(resultForEach[1]);
+    // console.log(resultForEach);
+    // console.log(totalPrice);
+  });
+tagTotalPrice.innerText = parseFloat(totalPrice);
+};
+
 const cartItemClickListener = (event) => {
   const theTarget = event.target;
   theTarget.remove();
+  calculatePrice();
 };
 
 const createCartItemElement = ({ sku, name, salePrice }) => {
@@ -39,12 +53,12 @@ const createCartItemElement = ({ sku, name, salePrice }) => {
   return li;
 };
 
-const sentToLocal = () => {
+const sendToLocal = () => {
   const cartItems = document.getElementById('cart-id').innerHTML;
   localStorage.setItem('cartItems', cartItems);
 };
 
-const getTheLocal = () => {
+const getLocalStorage = () => {
   const olCartItems = document.getElementById('cart-id');
   const local = localStorage.getItem('cartItems');
   olCartItems.innerHTML = local;
@@ -58,13 +72,14 @@ const toCartItems = () => {
     button.addEventListener('click', async () => {
       const selectedItem = button.parentElement.firstElementChild.innerHTML;
       const selectedData = await fetchItem(selectedItem);
+      // console.log(selectedData);
       const newItem = {
         sku: selectedData.id,
         name: selectedData.title,
         salePrice: selectedData.price,
       };
       cartItems.appendChild(createCartItemElement(newItem));
-      sentToLocal();
+      sendToLocal();
       calculatePrice();
     });
   });
@@ -86,15 +101,27 @@ const gettingProductData = async () => {
 
 const cleanCart = () => {
   const esvaziar = document.querySelector('.empty-cart');
+  // console.log(esvaziar);
   esvaziar.addEventListener('click', () => {
+    const totalPrice = document.querySelector('.total-price');
     const itens = document.querySelector('.cart__items');
-    itens.innerHTML = '';
     localStorage.removeItem('cartItems');
+    itens.innerHTML = '';
+    totalPrice.innerText = 0;
   });
+};
+
+const createHtmlTotalPrice = () => {
+  const sectionClassCart = document.querySelector('.cart');
+  const createH1 = document.createElement('h1');
+  createH1.className = 'total-price';
+  sectionClassCart.appendChild(createH1);
 };
 
 window.onload = () => {
   gettingProductData();
-  getTheLocal();
+  getLocalStorage();
   cleanCart();
+  createHtmlTotalPrice();
+  calculatePrice();
 };
