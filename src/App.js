@@ -12,7 +12,6 @@ class App extends React.Component {
         <Header />
         <SolarSystem />
         <Missions />
-        <MissionCard name="luiz" year={ 2020 } country="country" destination="dest" />
       </>
     );
   }
