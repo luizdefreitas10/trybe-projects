@@ -10,7 +10,7 @@ class App extends React.Component {
       <>
         <Header />
         <SolarSystem />
-        <Title headline="Texto da minha prop headline!!" />
+        {/* <Title headline="" /> */}
       </>
     );
   }
