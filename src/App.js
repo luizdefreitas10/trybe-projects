@@ -10,8 +10,7 @@ class App extends React.Component {
       <>
         <Header />
         <SolarSystem />
-        {/* <Title headline="" /> */}
-        {/* <PlanetCard data-testid="planet-card " planetName /> */}
+        <PlanetCard planetName="Nome do planeta" PlanetImage />
       </>
     );
   }
