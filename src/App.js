@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from './components/Form';
+import Card from './components/Card';
 
 class App extends React.Component {
   render() {
@@ -7,18 +8,28 @@ class App extends React.Component {
       <div>
         <h1>- Tryunfo -</h1>
         <Form
-          cardName="uma string"
-          cardDescription="uma string"
+          cardName="string"
+          cardDescription="string"
           cardAttr1="string"
-          cardAttr2="uma string"
-          cardAttr3="uma string"
-          cardImage="uma string"
-          cardRare="uma string"
-          cardTrunfo={ false }
-          hasTrunfo={ false }
-          isSaveButtonDisabled={ false }
+          cardAttr2="string"
+          cardAttr3="string"
+          cardImage="string"
+          cardRare="string"
+          cardTrunfo
+          hasTrunfo
+          isSaveButtonDisabled
           onInputChange={ () => console.log('inputChange acionado') }
           onSaveButtonClick={ () => console.log('saveButtonClick acionado') }
+        />
+        <Card
+          cardName="string"
+          cardDescription="string"
+          cardAttr1="string"
+          cardAttr2="string"
+          cardAttr3="string"
+          cardImage="string"
+          cardRare="string"
+          cardTrunfo={ false }
         />
       </div>
     );
