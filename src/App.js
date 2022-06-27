@@ -3,34 +3,67 @@ import Form from './components/Form';
 import Card from './components/Card';
 
 class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      nameCard: '',
+      descriptionCard: '',
+      firstAtt: '',
+      secondAtt: '',
+      thirdAtt: '',
+      imageInput: '',
+      rareInput: '',
+      trunfoInput: false,
+    };
+  }
+
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.type === 'checkbox'
+      ? event.target.checked : event.target.value });
+  }
+
   render() {
+    const { nameCard,
+      descriptionCard,
+      firstAtt,
+      secondAtt,
+      thirdAtt,
+      imageInput,
+      rareInput,
+      trunfoInput } = this.state;
     return (
-      <div>
-        <h1>- Tryunfo -</h1>
-        <Form
-          cardName="string"
-          cardDescription="string"
-          cardAttr1="string"
-          cardAttr2="string"
-          cardAttr3="string"
-          cardImage="string"
-          cardRare="string"
-          cardTrunfo
-          hasTrunfo
-          isSaveButtonDisabled
-          onInputChange={ () => console.log('inputChange acionado') }
-          onSaveButtonClick={ () => console.log('saveButtonClick acionado') }
-        />
-        <Card
-          cardName="string"
-          cardDescription="string"
-          cardAttr1="string"
-          cardAttr2="string"
-          cardAttr3="string"
-          cardImage="string"
-          cardRare="string"
-          cardTrunfo={ false }
-        />
+      <div className="div-app-form">
+        <div className="div-titulo-form">
+          <div className="div-titulo">
+            <h1>Adicione uma nova carta</h1>
+          </div>
+          <div className="div-app-form2">
+            <Form
+              cardName=""
+              cardDescription=""
+              cardAttr1=""
+              cardAttr3=""
+              cardAttr2=""
+              cardImage=""
+              cardRare=""
+              cardTrunfo={ false }
+              hasTrunfo
+              isSaveButtonDisabled={ false }
+              onInputChange={ this.handleChange }
+              onSaveButtonClick={ () => {} }
+            />
+          </div>
+          <Card
+            cardName={ nameCard }
+            cardDescription={ descriptionCard }
+            cardAttr1={ firstAtt }
+            cardAttr2={ secondAtt }
+            cardAttr3={ thirdAtt }
+            cardImage={ imageInput }
+            cardRare={ rareInput }
+            cardTrunfo={ trunfoInput }
+          />
+        </div>
       </div>
     );
   }

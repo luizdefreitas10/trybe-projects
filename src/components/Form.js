@@ -15,76 +15,84 @@ class Form extends React.Component {
       isSaveButtonDisabled,
       onInputChange,
       onSaveButtonClick } = this.props;
+
     return (
-      <div>
-        <form>
-          <label htmlFor="nome-carta">
+      <div className="div-form">
+        <form className="form-class">
+          <label htmlFor="nameCard">
             Nome:
             <input
               data-testid="name-input"
               type="text"
               placeholder="Digite o nome da carta"
-              htmlFor="nome-carta"
-              value={ cardName }
+              id="nameCard"
+              name="nameCard"
+              defaultValue={ cardName }
               onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="text-area-input">
+          <label htmlFor="descriptionCard">
             Descrição da carta:
             <textarea
               data-testid="description-input"
-              htmlFor="text-area-input"
-              id="text-area-input"
-              value={ cardDescription }
+              id="descriptionCard"
+              name="descriptionCard"
+              placeholder="Digite uma descrição"
+              defaultValue={ cardDescription }
               onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="attr1-input">
+          <label htmlFor="firstAtt">
             Atributo 01:
             <input
               type="number"
               data-testid="attr1-input"
-              htmlFor="attr1-input"
-              value={ cardAttr1 }
+              id="firstAtt"
+              name="firstAtt"
+              defaultValue={ cardAttr1 }
               onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="attr2-input">
+          <label htmlFor="secondAtt">
             Atributo 02:
             <input
               type="number"
               data-testid="attr2-input"
-              htmlFor="attr2-input"
-              value={ cardAttr2 }
+              id="secondAtt"
+              name="secondAtt"
+              defaultValue={ cardAttr2 }
               onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="attr3-input">
+          <label htmlFor="thirdAtt">
             Atributo 03:
             <input
               type="number"
               data-testid="attr3-input"
-              htmlFor="attr3-input"
-              value={ cardAttr3 }
+              id="thirdAtt"
+              name="thirdAtt"
+              defaultValue={ cardAttr3 }
               onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="image-input">
+          <label htmlFor="imageInput">
             Imagem:
             <input
               type="text"
               data-testid="image-input"
-              htmlFor="image-input"
-              value={ cardImage }
+              id="imageInput"
+              name="imageInput"
+              defaultValue={ cardImage }
               onChange={ onInputChange }
             />
           </label>
-          <label htmlFor="rare-input">
+          <label htmlFor="rareInput">
             Raridade da carta:
             <select
-              htmlFor="rare-input"
+              id="rareInput"
+              name="rareInput"
               data-testid="rare-input"
-              value={ cardRare }
+              defaultValue={ cardRare }
               onChange={ onInputChange }
             >
               <option value="normal">normal</option>
@@ -92,20 +100,22 @@ class Form extends React.Component {
               <option value="muito raro">muito raro</option>
             </select>
           </label>
-          <label htmlFor="trunfo-input">
+          <label htmlFor="trunfoInput">
             Super trunfo:
             <input
               type="checkbox"
               data-testid="trunfo-input"
-              htmlFor="trunfo-input"
-              checked={ cardTrunfo }
+              id="trunfoInput"
+              name="trunfoInput"
+              defaultChecked={ cardTrunfo }
               onChange={ onInputChange }
             />
           </label>
           <button
             data-testid="save-button"
             type="submit"
-            id="save-button"
+            id="saveButton"
+            name="saveButton"
             disabled={ isSaveButtonDisabled }
             onClick={ onSaveButtonClick }
           >

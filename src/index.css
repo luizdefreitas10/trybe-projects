@@ -9,3 +9,80 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.div-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.form-class {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid yellow;
+}
+
+.div-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.div-app-form {
+  display: flex;
+  background-color: #FAFAFA;
+}
+
+.div-card2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.div-app-form2 {
+  display: flex;
+  align-content: center;
+  border: 2px solid blue;
+  padding: 20px;
+}
+
+.div-titulo-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.div-h1-card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+.div-titulo {
+  display: flex;
+  justify-content: center;
+  border: 2px solid black;
+  margin: 20px;
+}
+
+span {
+  margin: 10px;
+}
+
+label {
+  margin: 10px;
+  font-family: "Verdana";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+.div-h1-card2 {
+  border: 2px solid green;
+  margin: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+}
+
+img {
+  width: 100%;
+  height: 260px;
+}
