@@ -18,7 +18,9 @@ class Form extends React.Component {
 
     return (
       <div className="div-form">
-        <form className="form-class">
+        <form
+          className="form-class"
+        >
           <label htmlFor="nameCard">
             Nome:
             <input
@@ -45,6 +47,8 @@ class Form extends React.Component {
           <label htmlFor="firstAtt">
             Atributo 01:
             <input
+              min={ 0 }
+              max={ 90 }
               type="number"
               data-testid="attr1-input"
               id="firstAtt"
@@ -56,6 +60,8 @@ class Form extends React.Component {
           <label htmlFor="secondAtt">
             Atributo 02:
             <input
+              min={ 0 }
+              max={ 90 }
               type="number"
               data-testid="attr2-input"
               id="secondAtt"
@@ -67,6 +73,8 @@ class Form extends React.Component {
           <label htmlFor="thirdAtt">
             Atributo 03:
             <input
+              min={ 0 }
+              max={ 90 }
               type="number"
               data-testid="attr3-input"
               id="thirdAtt"
@@ -74,6 +82,7 @@ class Form extends React.Component {
               defaultValue={ cardAttr3 }
               onChange={ onInputChange }
             />
+            <h5> Pontos disponíveis: 210</h5>
           </label>
           <label htmlFor="imageInput">
             Imagem:

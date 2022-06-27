@@ -86,3 +86,11 @@ img {
   width: 100%;
   height: 260px;
 }
+
+h5 {
+  font-family: 'Verdana';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}

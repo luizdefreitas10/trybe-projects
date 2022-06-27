@@ -14,12 +14,43 @@ class App extends React.Component {
       imageInput: '',
       rareInput: '',
       trunfoInput: false,
+      saveButton: true,
     };
   }
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.type === 'checkbox'
-      ? event.target.checked : event.target.value });
+      ? event.target.checked : event.target.value }, () => this.validateFormButton());
+  }
+
+  handleSaveButton = (event) => {
+    event.preventDefault();
+  }
+
+  validateFormButton = () => {
+    const { nameCard,
+      descriptionCard,
+      imageInput,
+      rareInput,
+      firstAtt,
+      secondAtt,
+      thirdAtt,
+    } = this.state;
+    const min = 0;
+    const max = 90;
+    const total = 210;
+    if (nameCard !== ''
+    && descriptionCard !== ''
+    && imageInput !== ''
+    && rareInput !== ''
+    && ((Number(firstAtt) + Number(secondAtt) + Number(thirdAtt)) <= total)
+    && (Number(firstAtt) <= max && Number(firstAtt) >= min)
+    && (Number(secondAtt) <= max && Number(secondAtt) >= min)
+    && (Number(thirdAtt) <= max && Number(thirdAtt) >= min)) {
+      this.setState({ saveButton: false });
+    } else {
+      this.setState({ saveButton: true });
+    }
   }
 
   render() {
@@ -30,7 +61,8 @@ class App extends React.Component {
       thirdAtt,
       imageInput,
       rareInput,
-      trunfoInput } = this.state;
+      trunfoInput,
+      saveButton } = this.state;
     return (
       <div className="div-app-form">
         <div className="div-titulo-form">
@@ -48,9 +80,9 @@ class App extends React.Component {
               cardRare=""
               cardTrunfo={ false }
               hasTrunfo
-              isSaveButtonDisabled={ false }
+              isSaveButtonDisabled={ saveButton }
               onInputChange={ this.handleChange }
-              onSaveButtonClick={ () => {} }
+              onSaveButtonClick={ this.handleSaveButton }
             />
           </div>
           <Card
