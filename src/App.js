@@ -71,6 +71,12 @@ class App extends React.Component {
     return savedCardsList.some((c) => c.trunfoInput === true);
   }
 
+  deleteButton = (param) => {
+    this.setState((prevState) => ({
+      savedCardsList: prevState.savedCardsList.filter((c) => c.nameCard !== param),
+    }));
+  }
+
   render() {
     const { nameCard,
       descriptionCard,
@@ -87,7 +93,7 @@ class App extends React.Component {
       <div className="div-app-form">
         {/* { console.log(savedCardsList) } */}
         <div className="div-titulo">
-          <h1>Adicione uma nova carta</h1>
+          <h1>Trunfo: adicione uma nova carta</h1>
         </div>
         <div className="div-titulo-form">
           <div className="div-app-form2">
@@ -119,7 +125,7 @@ class App extends React.Component {
         </div>
         <div className="div-app-form">
           <div className="div-titulo">
-            <h2>Todas as cartas</h2>
+            <h2>Todas as cartas:</h2>
           </div>
           <div className="div-card-button">
             { savedCardsList.map((c) => (
@@ -137,6 +143,13 @@ class App extends React.Component {
                   cardRare={ c.rareInput }
                   cardTrunfo={ c.trunfoInput }
                 />
+                <button
+                  data-testid="delete-button"
+                  type="button"
+                  onClick={ () => this.deleteButton(c.nameCard) }
+                >
+                  Excluir
+                </button>
               </div>)) }
           </div>
         </div>
