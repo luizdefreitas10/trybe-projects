@@ -16,6 +16,7 @@ class App extends React.Component {
       trunfoInput: false,
       saveButton: true,
       savedCardsList: [],
+      filterName: [],
     };
   }
 
@@ -37,6 +38,9 @@ class App extends React.Component {
       rareInput: '',
       trunfoInput: false,
       saveButton: true,
+    }));
+    this.setState((prevState) => ({
+      filterName: [...prevState.filterName, prevState],
     }));
   }
 
@@ -75,6 +79,21 @@ class App extends React.Component {
     this.setState((prevState) => ({
       savedCardsList: prevState.savedCardsList.filter((c) => c.nameCard !== param),
     }));
+  }
+
+  handleFilterName = (event) => {
+    const { value } = event.target;
+    const { savedCardsList, filterName } = this.state;
+    if (event.target.value !== '') {
+      this.setState({
+        savedCardsList: savedCardsList
+          .filter((c) => c.nameCard.toLowerCase().includes(value.toLowerCase())),
+      });
+    } else {
+      this.setState({
+        savedCardsList: filterName,
+      });
+    }
   }
 
   render() {
@@ -127,6 +146,16 @@ class App extends React.Component {
           <div className="div-titulo">
             <h2>Todas as cartas:</h2>
           </div>
+          Filtros de busca:
+          <label htmlFor="name-filter">
+            <input
+              type="text"
+              id="name-filter"
+              data-testid="name-filter"
+              placeholder="Nome da carta"
+              onChange={ this.handleFilterName }
+            />
+          </label>
           <div className="div-card-button">
             { savedCardsList.map((c) => (
               <div
