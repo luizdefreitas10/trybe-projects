@@ -28,6 +28,7 @@ code {
 
 .div-app-form {
   display: flex;
+  flex-direction: column;
   background-color: #FAFAFA;
 }
 
@@ -51,8 +52,10 @@ code {
 
 .div-h1-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   border: 2px solid black;
+  width: 525px;
+  text-align: center;
 }
 
 .div-titulo {
@@ -80,6 +83,7 @@ label {
   font-weight: 600;
   font-size: 16px;
   line-height: 150%;
+  width: 450px;
 }
 
 img {
@@ -94,3 +98,4 @@ h5 {
   font-size: 16px;
   line-height: 150%;
 }
+

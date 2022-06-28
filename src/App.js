@@ -81,9 +81,11 @@ class App extends React.Component {
       rareInput,
       trunfoInput,
       saveButton,
+      savedCardsList,
     } = this.state;
     return (
       <div className="div-app-form">
+        {/* { console.log(savedCardsList) } */}
         <div className="div-titulo-form">
           <div className="div-titulo">
             <h1>Adicione uma nova carta</h1>
@@ -114,6 +116,25 @@ class App extends React.Component {
             cardRare={ rareInput }
             cardTrunfo={ trunfoInput }
           />
+        </div>
+        <div>
+          <h2>Todas as cartas</h2>
+          { savedCardsList.map((c) => (
+            <div
+              key={ c.nameCard }
+              className="div-h1-card"
+            >
+              <Card
+                cardName={ c.nameCard }
+                cardDescription={ c.descriptionCard }
+                cardAttr1={ c.firstAtt }
+                cardAttr2={ c.secondAtt }
+                cardAttr3={ c.thirdAtt }
+                cardImage={ c.imageInput }
+                cardRare={ c.rareInput }
+                cardTrunfo={ c.trunfoInput }
+              />
+            </div>)) }
         </div>
       </div>
     );
