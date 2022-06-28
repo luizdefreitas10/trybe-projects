@@ -15,6 +15,7 @@ class App extends React.Component {
       rareInput: '',
       trunfoInput: false,
       saveButton: true,
+      savedCardsList: [],
     };
   }
 
@@ -24,6 +25,18 @@ class App extends React.Component {
   }
 
   handleSaveButton = (event) => {
+    this.setState((prevState) => ({
+      savedCardsList: [...prevState.savedCardsList, prevState],
+      nameCard: '',
+      descriptionCard: '',
+      firstAtt: '0',
+      secondAtt: '0',
+      thirdAtt: '0',
+      imageInput: '',
+      rareInput: '',
+      trunfoInput: false,
+      saveButton: true,
+    }));
     event.preventDefault();
   }
 
@@ -62,7 +75,8 @@ class App extends React.Component {
       imageInput,
       rareInput,
       trunfoInput,
-      saveButton } = this.state;
+      saveButton,
+    } = this.state;
     return (
       <div className="div-app-form">
         <div className="div-titulo-form">
@@ -71,13 +85,13 @@ class App extends React.Component {
           </div>
           <div className="div-app-form2">
             <Form
-              cardName=""
-              cardDescription=""
-              cardAttr1=""
-              cardAttr3=""
-              cardAttr2=""
-              cardImage=""
-              cardRare=""
+              cardName={ nameCard }
+              cardDescription={ descriptionCard }
+              cardAttr1={ firstAtt }
+              cardAttr2={ secondAtt }
+              cardAttr3={ thirdAtt }
+              cardImage={ imageInput }
+              cardRare={ rareInput }
               cardTrunfo={ false }
               hasTrunfo
               isSaveButtonDisabled={ saveButton }
