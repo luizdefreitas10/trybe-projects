@@ -25,6 +25,7 @@ class App extends React.Component {
   }
 
   handleSaveButton = (event) => {
+    event.preventDefault();
     this.setState((prevState) => ({
       savedCardsList: [...prevState.savedCardsList, prevState],
       nameCard: '',
@@ -37,7 +38,6 @@ class App extends React.Component {
       trunfoInput: false,
       saveButton: true,
     }));
-    event.preventDefault();
   }
 
   validateFormButton = () => {
@@ -66,6 +66,11 @@ class App extends React.Component {
     }
   }
 
+  verifyCheckbox = () => {
+    const { savedCardsList } = this.state;
+    return savedCardsList.some((c) => c.trunfoInput === true);
+  }
+
   render() {
     const { nameCard,
       descriptionCard,
@@ -92,8 +97,8 @@ class App extends React.Component {
               cardAttr3={ thirdAtt }
               cardImage={ imageInput }
               cardRare={ rareInput }
-              cardTrunfo={ false }
-              hasTrunfo
+              cardTrunfo={ trunfoInput }
+              hasTrunfo={ this.verifyCheckbox() }
               isSaveButtonDisabled={ saveButton }
               onInputChange={ this.handleChange }
               onSaveButtonClick={ this.handleSaveButton }
