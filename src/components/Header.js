@@ -64,7 +64,7 @@ class Header extends React.Component {
             to="/profile"
             data-testid="link-to-profile"
           >
-            Favoritos
+            Perfil
 
           </Link>
         </nav>
