@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaUserCheck } from 'react-icons/fa';
 import { getUser } from '../services/userAPI';
 import Loading from './Loading';
 
@@ -40,8 +41,8 @@ class Header extends React.Component {
                   data-testid="header-user-name"
                   className="div-header-user"
                 >
+                  <FaUserCheck />
                   { `Bem vindo(a), ${userName.name}` }
-
                 </div>
               </>) }
         </header>

@@ -7,7 +7,8 @@
 
 p {
   align-content: center;
-  color: black;
+  background-color: #023031;
+  color: white;
   font-family: Epilogue , sans-serif;
   font-size: 19px;
   font-style: normal;
@@ -17,7 +18,7 @@ p {
 .page-login-class {
   display: flex;
   justify-content: center;
-
+  margin-top: 400px;
 }
 
 .header-class {
@@ -42,7 +43,8 @@ img {
   font-style: normal;
   font-weight: 500;
   margin-right: 25px;
-  padding: 10px;
+  padding: 15px;
+
 }
 
 nav a {
@@ -69,4 +71,13 @@ nav {
 nav a:hover {
   background-color: #036b52;
   color: white;
+}
+
+svg {
+  margin: 0 10px;
+  text-align: center;
+}
+
+.div-login2 {
+  height: 200px;
 }
