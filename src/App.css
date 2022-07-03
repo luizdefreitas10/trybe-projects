@@ -1,15 +1,21 @@
 * {
+  background-color: #fafafa;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  background-color: brown;
 }
 
 p {
-  font-family: 'Epilogue';
+  color: black;
+  font-family: Epilogue , sans-serif;
+  font-size: 28px;
   font-style: normal;
   font-weight: 700;
-  font-size: 28px;
   line-height: 29px;
-  color: #FFFFFF;
+}
+
+.page-login-class {
+  display: flex;
+  justify-content: center;
+
 }

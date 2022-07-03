@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Search from './pages/Search';
 import Profile from './pages/Profile';
@@ -14,13 +14,35 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          <Login />
-          <Search />
-          <Profile />
-          <ProfileEdit />
-          <NotFound />
-          <Favorites />
-          <Album />
+          <Route
+            path="/"
+            exact
+            render={ () => <Login /> }
+          />
+          <Route
+            path="/search"
+            render={ () => <Search /> }
+          />
+          <Route
+            path="/album/:id"
+            render={ () => <Album /> }
+          />
+          <Route
+            path="/favorites"
+            render={ () => <Favorites /> }
+          />
+          <Route
+            path="/profile"
+            render={ () => <Profile /> }
+          />
+          <Route
+            path="/profile/edit"
+            render={ () => <ProfileEdit /> }
+          />
+          <Route
+            path="*"
+            render={ () => <NotFound /> }
+          />
         </div>
       </BrowserRouter>
     );
