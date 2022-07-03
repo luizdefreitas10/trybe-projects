@@ -6,16 +6,41 @@
 }
 
 p {
+  align-content: center;
   color: black;
   font-family: Epilogue , sans-serif;
-  font-size: 28px;
+  font-size: 19px;
   font-style: normal;
   font-weight: 700;
-  line-height: 29px;
 }
 
 .page-login-class {
   display: flex;
   justify-content: center;
 
+}
+
+.header-class {
+  background-color: #023031;
+  display: flex;
+  height: 140px;
+  justify-content: space-between;
+}
+
+img {
+  background-color: #023031;
+  height: 100px;
+  margin-left: 20px;
+  width: 150px;
+}
+
+.div-header-user {
+  align-self: center;
+  border-radius: 15px;
+  font-family: Epilogue , sans-serif;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  margin-right: 25px;
+  padding: 10px;
 }

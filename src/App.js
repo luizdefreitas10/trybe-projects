@@ -33,10 +33,12 @@ class App extends React.Component {
           />
           <Route
             path="/profile"
+            exact
             render={ () => <Profile /> }
           />
           <Route
             path="/profile/edit"
+            exact
             render={ () => <ProfileEdit /> }
           />
           <Route
