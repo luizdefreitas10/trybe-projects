@@ -75,16 +75,3 @@ class Header extends React.Component {
 }
 
 export default Header;
-
-// { loading ? <Loading />
-// : (
-//   <>
-//     <img src="logo-trybe-tunes.png" alt="logo trybe" />
-//     <div
-//       data-testid="header-user-name"
-//       className="div-header-user"
-//     >
-//       { `Bem vindo(a), ${userName.name}` }
-
-//     </div>
-//   </>) }

@@ -44,7 +44,6 @@ img {
   font-weight: 500;
   margin-right: 25px;
   padding: 15px;
-
 }
 
 nav a {
@@ -73,11 +72,97 @@ nav a:hover {
   color: white;
 }
 
-svg {
+.div-header-user svg {
   margin: 0 10px;
   text-align: center;
 }
 
 .div-login2 {
   height: 200px;
+}
+
+.div-form-artist {
+  display: flex;
+  justify-content: center;
+}
+
+.div-form-artist input {
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px black;
+  height: 45px;
+  margin: 50px;
+  padding: 10px;
+  width: 519px;
+}
+
+.div-form-artist button {
+  background-color: #003be5;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px black;
+  color: white;
+  font-family: Verdana , sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  height: 45px;
+  line-height: 150%;
+  width: 134px;
+}
+
+.div-form-artist button:hover {
+  font-weight: 600;
+}
+
+h1 {
+  color: #001813;
+  font-family: Epilogue , sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 25px;
+  text-align: center;
+}
+
+.div2-datainfo {
+  display: flex;
+  flex-direction: row;
+}
+
+.div2-datainfo ul li a {
+  color: #3d495c;
+  display: flex;
+  flex-direction: row;
+  font-family: Verdana , sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  list-style: none;
+  margin: 20px;
+  text-decoration: none;
+}
+
+.div2-datainfo ul li {
+  list-style: none;
+  text-decoration: none;
+  width: 250px;
+}
+
+.div2-datainfo ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.div2-datainfo ul li img {
+  background: white;
+  border: 1px solid #e1e5eb;
+  border-radius: 6px;
+  box-shadow: 1px 2px 1px black;
+}
+
+.div2-datainfo ul li a:hover {
+  color: #003be5;
+  font-weight: 600;
 }
