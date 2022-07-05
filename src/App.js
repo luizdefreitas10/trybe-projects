@@ -34,13 +34,13 @@ class App extends React.Component {
               render={ () => <Favorites /> }
             />
             <Route
-              path="/profile"
-              render={ () => <Profile /> }
-            />
-            <Route
               path="/profile/edit"
               exact
               render={ () => <ProfileEdit /> }
+            />
+            <Route
+              path="/profile"
+              render={ () => <Profile /> }
             />
             <Route
               path="*"

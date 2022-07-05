@@ -31,7 +31,7 @@ class Album extends React.Component {
     const { data, name, collection } = this.state;
     const [firstIndex, ...restOfData] = data;
     // console.log(data);
-    console.log(firstIndex);
+    // console.log(firstIndex);
     return (
       <div data-testid="page-album">
         <Header />
