@@ -31,6 +31,7 @@ class Search extends React.Component {
         artist: '',
         data,
       });
+      console.log(data);
     });
   }
 

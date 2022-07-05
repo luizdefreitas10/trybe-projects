@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './pages/Login';
 import Search from './pages/Search';
 import Profile from './pages/Profile';
@@ -14,37 +14,39 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <div>
-          <Route
-            path="/"
-            exact
-            render={ () => <Login /> }
-          />
-          <Route
-            path="/search"
-            render={ () => <Search /> }
-          />
-          <Route
-            path="/album/:id"
-            render={ () => <Album /> }
-          />
-          <Route
-            path="/favorites"
-            render={ () => <Favorites /> }
-          />
-          <Route
-            path="/profile"
-            exact
-            render={ () => <Profile /> }
-          />
-          <Route
-            path="/profile/edit"
-            exact
-            render={ () => <ProfileEdit /> }
-          />
-          <Route
-            path="*"
-            render={ () => <NotFound /> }
-          />
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={ () => <Login /> }
+            />
+            <Route
+              path="/search"
+              render={ () => <Search /> }
+            />
+            <Route
+              path="/album/:id"
+              exact
+              render={ (props) => <Album { ...props } /> }
+            />
+            <Route
+              path="/favorites"
+              render={ () => <Favorites /> }
+            />
+            <Route
+              path="/profile"
+              render={ () => <Profile /> }
+            />
+            <Route
+              path="/profile/edit"
+              exact
+              render={ () => <ProfileEdit /> }
+            />
+            <Route
+              path="*"
+              render={ () => <NotFound /> }
+            />
+          </Switch>
         </div>
       </BrowserRouter>
     );

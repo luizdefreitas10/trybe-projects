@@ -166,3 +166,17 @@ h1 {
   color: #003be5;
   font-weight: 600;
 }
+
+.div-album-artist {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+audio {
+  margin: 20px;
+}
+
+.div-music-card audio {
+  align-items: center;
+  display: flex;
+}
