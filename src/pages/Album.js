@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Header from '../components/Header';
 import getMusics from '../services/musicsAPI';
 import MusicCard from '../components/MusicCard';
+import Loading from '../components/Loading';
 
 class Album extends React.Component {
   constructor() {
@@ -11,6 +12,7 @@ class Album extends React.Component {
       data: [],
       name: '',
       collection: '',
+      loading: false,
     };
   }
 
@@ -22,34 +24,39 @@ class Album extends React.Component {
     const { match } = this.props;
     const { id } = match.params;
     const data = await getMusics(id);
-    // console.log(data);
     const { artistName, collectionName } = data[0];
-    this.setState({ data, name: artistName, collection: collectionName });
+    this.setState({ data,
+      name: artistName,
+      collection: collectionName,
+    });
   }
 
   render() {
-    const { data, name, collection } = this.state;
+    const { data, name, collection, loading } = this.state;
     const [firstIndex, ...restOfData] = data;
-    // console.log(data);
     console.log(firstIndex);
     return (
       <div data-testid="page-album">
         <Header />
-        <div className="div-album-artist">
-          <div>
-            <h1 data-testid="artist-name">{ name }</h1>
-            <h1 data-testid="album-name">{ collection }</h1>
-          </div>
-          <div>
-            { restOfData.map((d, index) => (
-              <MusicCard
-                key={ index }
-                dataTrackName={ d.trackName }
-                previewUrl={ d.previewUrl }
-              />
-            )) }
-          </div>
-        </div>
+        { loading ? <Loading />
+          : (
+            <div className="div-album-artist">
+              <div>
+                {/* <img src={ data.artworkUrl100 } alt={ data.amgArtistId } /> */}
+                <h1 data-testid="artist-name">{ name }</h1>
+                <h1 data-testid="album-name">{ collection }</h1>
+              </div>
+              <div>
+                { restOfData.map((d, index) => (
+                  <MusicCard
+                    key={ index }
+                    data={ d }
+                    previewUrl={ d.previewUrl }
+                    trackId={ d.trackId }
+                  />
+                )) }
+              </div>
+            </div>)}
       </div>
     );
   }
