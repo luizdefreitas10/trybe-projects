@@ -33,8 +33,7 @@ class Album extends React.Component {
 
   render() {
     const { data, name, collection, loading } = this.state;
-    const [firstIndex, ...restOfData] = data;
-    console.log(firstIndex);
+    const [, ...restOfData] = data;
     return (
       <div data-testid="page-album">
         <Header />
@@ -53,6 +52,7 @@ class Album extends React.Component {
                     data={ d }
                     previewUrl={ d.previewUrl }
                     trackId={ d.trackId }
+                    // checkBox={ this.checkBox(d) }
                   />
                 )) }
               </div>
