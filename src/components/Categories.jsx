@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { getCategories } from '../services/api';
+import { getCategories, getProductsFromCategoryAndQuery } from '../services/api';
 
 import './Categories.css';
+import ProductList from './ProductList';
 
 export default class Categories extends Component {
-  state = { objCategory: [] };
+  state = { objCategory: [], categorieProducts: [] };
 
   componentDidMount() {
     this.categoryFecth();
@@ -15,8 +16,14 @@ export default class Categories extends Component {
     this.setState({ objCategory: response });
   };
 
+  handleProductID = async ({ target }) => {
+    const { id } = target;
+    const data = await getProductsFromCategoryAndQuery(id, null);
+    this.setState({ categorieProducts: data.results });
+  }
+
   render() {
-    const { objCategory } = this.state;
+    const { objCategory, categorieProducts } = this.state;
     return (
       <div className="categories-container">
         {objCategory.map((list) => (
@@ -26,6 +33,7 @@ export default class Categories extends Component {
             data-testid="category"
           >
             <input
+              onChange={ this.handleProductID }
               type="radio"
               name="category"
               id={ list.id }
@@ -33,6 +41,17 @@ export default class Categories extends Component {
             { list.name }
           </label>
         ))}
+        <div>
+          { categorieProducts.map((obj) => (
+            <div key={ obj.id }>
+              <ProductList
+                productImage={ obj.thumbnail }
+                productPrice={ obj.price }
+                productName={ obj.title }
+              />
+            </div>
+          )) }
+        </div>
       </div>
     );
   }
