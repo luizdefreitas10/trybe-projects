@@ -48,14 +48,13 @@ class Home extends React.Component {
           <Categories />
         </div>
         <div>
-          
           { objResult.map((obj) => (
             <div key={ obj.id }>
               <ProductList
-            productImage={ obj.thumbnail }
-            productPrice={ obj.price }
-            productName={ obj.title }
-           />
+                productImage={ obj.thumbnail }
+                productPrice={ obj.price }
+                productName={ obj.title }
+              />
             </div>
           )) }
         </div>
