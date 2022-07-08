@@ -14,10 +14,12 @@ class Home extends React.Component {
     event.preventDefault();
     const response = await getProductsFromCategoryAndQuery(null, nameInput);
     this.setState({ objResult: response.results });
+    console.log(response.results);
   }
 
   render() {
     const { nameInput, objResult } = this.state;
+    console.log(objResult);
     return (
       <div className="home-container">
         <input
@@ -44,7 +46,7 @@ class Home extends React.Component {
           Digite algum termo de pesquisa ou escolha uma categoria.
         </p>
         <div>
-          <Categories change />
+          <Categories />
         </div>
         <div>
           { objResult.map((obj) => (
@@ -53,6 +55,7 @@ class Home extends React.Component {
                 productImage={ obj.thumbnail }
                 productPrice={ obj.price }
                 productName={ obj.title }
+                productId={ obj.id }
               />
             </div>
           )) }

@@ -48,6 +48,7 @@ export default class Categories extends Component {
                 productImage={ obj.thumbnail }
                 productPrice={ obj.price }
                 productName={ obj.title }
+                productId={ obj.id }
               />
             </div>
           )) }
