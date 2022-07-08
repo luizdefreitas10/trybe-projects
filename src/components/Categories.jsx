@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { getCategories } from '../services/api';
 
+import './Categories.css';
+
 export default class Categories extends Component {
   state = { objCategory: [] };
 
@@ -16,14 +18,20 @@ export default class Categories extends Component {
   render() {
     const { objCategory } = this.state;
     return (
-      <div>
-        {objCategory.map(({ id, name }) => (
-          <div key={ id }>
-            <label htmlFor="categories" data-testid="category">
-              <input type="radio" id="categories" />
-              { name }
-            </label>
-          </div>
+      <div className="categories-container">
+        {objCategory.map((list) => (
+          <label
+            key={ list.id }
+            htmlFor={ list.id }
+            data-testid="category"
+          >
+            <input
+              type="radio"
+              name="category"
+              id={ list.id }
+            />
+            { list.name }
+          </label>
         ))}
       </div>
     );
