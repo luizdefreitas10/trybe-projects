@@ -13,7 +13,7 @@ class Home extends React.Component {
     const { nameInput } = this.state;
     event.preventDefault();
     const response = await getProductsFromCategoryAndQuery(null, nameInput);
-    console.log(response.results);
+    // console.log(response.results);
     this.setState({ objResult: response.results });
   }
 
@@ -48,7 +48,16 @@ class Home extends React.Component {
           <Categories />
         </div>
         <div>
-          <ProductList propObjResult={ objResult } />
+          
+          { objResult.map((obj) => (
+            <div key={ obj.id }>
+              <ProductList
+            productImage={ obj.thumbnail }
+            productPrice={ obj.price }
+            productName={ obj.title }
+           />
+            </div>
+          )) }
         </div>
       </div>
     );

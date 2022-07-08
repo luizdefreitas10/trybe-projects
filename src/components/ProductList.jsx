@@ -2,9 +2,17 @@ import React, { Component } from 'react';
 
 export default class ProductList extends Component {
   render() {
-    const { propObjResults } = this.props;
+    const { productName, productPrice, productImage } = this.props;
+    // console.log(propObjResults);
     return (
-      <div>aaa</div>
+      <div data-testid="product">
+        <h3>{ productName }</h3>
+        <img
+        src={ productImage }
+        alt={ productName }
+        />
+        <h4>{ productPrice }</h4>
+      </div>
     );
   }
 }
