@@ -14,12 +14,12 @@ class Home extends React.Component {
     event.preventDefault();
     const response = await getProductsFromCategoryAndQuery(null, nameInput);
     this.setState({ objResult: response.results });
-    console.log(response.results);
+    // console.log(response.results);
   }
 
   render() {
     const { nameInput, objResult } = this.state;
-    console.log(objResult);
+    // console.log(objResult);
     return (
       <div className="home-container">
         <input
@@ -52,10 +52,11 @@ class Home extends React.Component {
           { objResult.map((obj) => (
             <div key={ obj.id }>
               <ProductList
-                productImage={ obj.thumbnail }
-                productPrice={ obj.price }
-                productName={ obj.title }
-                productId={ obj.id }
+                propObj={ obj }
+                // productImage={ obj.thumbnail }
+                // productPrice={ obj.price }
+                // productName={ obj.title }
+                // productId={ obj.id }
               />
             </div>
           )) }

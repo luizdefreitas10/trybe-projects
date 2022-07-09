@@ -1,5 +1,9 @@
 import React from 'react';
 
+// export async function getAddToCart(objectCart) {
+//   console.log('funcionou');
+// }
+
 class Cart extends React.Component {
   render() {
     return (
@@ -11,3 +15,5 @@ class Cart extends React.Component {
 }
 
 export default Cart;
+
+// export async function getProductsById(id)

@@ -9,9 +9,11 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <Route path="/" exact component={ Home } />
-        <Route path="/cart" component={ Cart } />
+        <Route path="/cart" render={ (() => (<Cart propProductList />)) } />
         <Route path="/product/:id" component={ ProductDetails } />
       </BrowserRouter>
     );
   }
 }
+
+// component={ Cart }

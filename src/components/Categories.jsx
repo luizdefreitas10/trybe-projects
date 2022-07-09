@@ -45,10 +45,11 @@ export default class Categories extends Component {
           { categorieProducts.map((obj) => (
             <div key={ obj.id }>
               <ProductList
-                productImage={ obj.thumbnail }
-                productPrice={ obj.price }
-                productName={ obj.title }
-                productId={ obj.id }
+                propObj={ obj }
+                // productImage={ obj.thumbnail }
+                // productPrice={ obj.price }
+                // productName={ obj.title }
+                // productId={ obj.id }
               />
             </div>
           )) }
