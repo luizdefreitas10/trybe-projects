@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { getCategories, getProductsFromCategoryAndQuery } from '../services/api';
 
 import './Categories.css';
@@ -22,8 +23,24 @@ export default class Categories extends Component {
     this.setState({ categorieProducts: data.results });
   }
 
+  // handleCartButton = () => {
+  //   // const { propObj } = this.props;
+  //   const { categorieProducts } = this.state;
+  //   // // const { productName, productPrice } = this.props;
+  //   // this.setState({
+  //   //   cartList: categorieProducts,
+  //   // });
+  //   console.log(categorieProducts);
+  //   // this.setState((prevState) => ({
+  //   //   addToCart: prevState.productList,
+  //   // }));
+  //   // console.log(addToCart);
+  //   // getAddToCart();
+  // }
+
   render() {
     const { objCategory, categorieProducts } = this.state;
+    const { handleCartButton } = this.props;
     return (
       <div className="categories-container">
         {objCategory.map((list) => (
@@ -46,11 +63,16 @@ export default class Categories extends Component {
             <div key={ obj.id }>
               <ProductList
                 propObj={ obj }
-                // productImage={ obj.thumbnail }
-                // productPrice={ obj.price }
-                // productName={ obj.title }
-                // productId={ obj.id }
               />
+              <button
+                type="submit"
+                data-testid="product-add-to-cart"
+                onClick={ handleCartButton }
+                id={ obj.id }
+              >
+                Adicionar ao carrinho
+
+              </button>
             </div>
           )) }
         </div>
@@ -58,3 +80,7 @@ export default class Categories extends Component {
     );
   }
 }
+
+Categories.propTypes = {
+  handleCartButton: PropTypes.func.isRequired,
+};

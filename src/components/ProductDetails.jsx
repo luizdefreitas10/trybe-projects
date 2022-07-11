@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { getProductsById } from '../services/api';
+import Button from './Button';
 
 export default class ProductDetails extends Component {
   state ={ productCart: [] }
@@ -17,6 +19,7 @@ export default class ProductDetails extends Component {
 
   render() {
     const { productCart } = this.state;
+    const { handleCartButton } = this.props;
     return (
       <div>
         <h3 data-testid="product-detail-name">{ productCart.title }</h3>
@@ -33,6 +36,18 @@ export default class ProductDetails extends Component {
           {' '}
           unidades
         </h3>
+        <div>
+          <button
+            type="submit"
+            data-testid="product-detail-add-to-cart"
+            onClick={ handleCartButton }
+            id={ productCart.id }
+          >
+            Adicionar ao carrinho
+
+          </button>
+        </div>
+        <Link to="/cart" data-testid="shopping-cart-button"><Button /></Link>
       </div>
     );
   }

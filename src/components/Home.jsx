@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { getProductsFromCategoryAndQuery } from '../services/api';
 
 import Button from './Button';
@@ -19,6 +20,7 @@ class Home extends React.Component {
 
   render() {
     const { nameInput, objResult } = this.state;
+    const { handleCartButton } = this.props;
     // console.log(objResult);
     return (
       <div className="home-container">
@@ -46,7 +48,7 @@ class Home extends React.Component {
           Digite algum termo de pesquisa ou escolha uma categoria.
         </p>
         <div>
-          <Categories />
+          <Categories handleCartButton={ handleCartButton } />
         </div>
         <div>
           { objResult.map((obj) => (
@@ -58,6 +60,15 @@ class Home extends React.Component {
                 // productName={ obj.title }
                 // productId={ obj.id }
               />
+              <button
+                type="submit"
+                data-testid="product-add-to-cart"
+                onClick={ handleCartButton }
+                id={ obj.id }
+              >
+                Adicionar ao carrinho
+
+              </button>
             </div>
           )) }
         </div>
@@ -65,5 +76,9 @@ class Home extends React.Component {
     );
   }
 }
+
+Home.propTypes = {
+  handleCartButton: PropTypes.func.isRequired,
+};
 
 export default Home;

@@ -4,26 +4,6 @@ import { Link } from 'react-router-dom';
 // import { getAddToCart } from './Cart';
 
 export default class ProductList extends Component {
-  // state = {
-  //   productList: [],
-  //   addToCart: [],
-  // }
-
-  handleCartButton = () => {
-    // const { propObj } = this.props;
-    // const { productList } = this.state;
-    // // const { productName, productPrice } = this.props;
-    // // console.log(propObj);
-    // this.setState({
-    //   productList: propObj,
-    // });
-    // this.setState((prevState) => ({
-    //   addToCart: prevState.productList,
-    // }));
-    // console.log(productList);
-    // getAddToCart();
-  }
-
   render() {
     // const { productName, productPrice, productImage, productId } = this.props;
     const { propObj } = this.props;
@@ -39,14 +19,6 @@ export default class ProductList extends Component {
           />
           <h4>{ propObj.price }</h4>
         </Link>
-        <button
-          type="submit"
-          data-testid="product-add-to-cart"
-          onClick={ this.handleCartButton }
-        >
-          Adicionar ao carrinho
-
-        </button>
       </div>
     );
   }
