@@ -8,20 +8,14 @@ import { getProductsById } from './services/api';
 export default class App extends Component {
   state = {
     cartList: [],
-    // quantidade: 1,
   }
 
   handleCartButton = async (event) => {
-    // const { cartList } = this.state;
     const { id } = event.target;
-    console.log(id);
     const response = await getProductsById(id);
-    // const test = 1;
-    response.qnt = 1;
     this.setState((prevState) => ({
       cartList: [...prevState.cartList, response],
     }));
-    // console.log(response);
   }
 
   render() {
