@@ -26,7 +26,7 @@ export default class ProductCart extends Component {
             value="-"
             data-testid="product-decrease-quantity"
             onClick={ this.counter }
-            disabled={ quantidade === 1 }
+            disabled={ quantidade <= 1 }
           />
           <p data-testid="shopping-cart-product-quantity">{ quantidade }</p>
           <input

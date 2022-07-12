@@ -15,11 +15,8 @@ class Cart extends React.Component {
             <ProductCart cartProduct={ product } key={ index } />
           ))
         ) }
-        <h3
-          data-testid="shopping-cart-product-quantity"
-        >
+        <h3>
           { `Quantidade de produtos do carrinho: ${cartList.length}` }
-
         </h3>
       </div>
     );
