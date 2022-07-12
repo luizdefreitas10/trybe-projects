@@ -63,7 +63,7 @@ class Home extends React.Component {
               <button
                 type="submit"
                 data-testid="product-add-to-cart"
-                onClick={ handleCartButton }
+                onClick={ () => handleCartButton(obj) }
                 id={ obj.id }
               >
                 Adicionar ao carrinho
