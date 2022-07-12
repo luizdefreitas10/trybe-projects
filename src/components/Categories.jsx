@@ -67,8 +67,8 @@ export default class Categories extends Component {
               <button
                 type="submit"
                 data-testid="product-add-to-cart"
-                onClick={ handleCartButton }
-                id={ obj.id }
+                onClick={ () => handleCartButton(obj) }
+                // id={ obj.id }
               >
                 Adicionar ao carrinho
 

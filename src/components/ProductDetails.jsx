@@ -40,8 +40,8 @@ export default class ProductDetails extends Component {
           <button
             type="submit"
             data-testid="product-detail-add-to-cart"
-            onClick={ handleCartButton }
-            id={ productCart.id }
+            onClick={ () => handleCartButton(productCart) }
+            // id={ productCart.id }
           >
             Adicionar ao carrinho
 

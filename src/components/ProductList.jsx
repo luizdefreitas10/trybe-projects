@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-// import { getAddToCart } from './Cart';
 
 export default class ProductList extends Component {
   render() {
-    // const { productName, productPrice, productImage, productId } = this.props;
     const { propObj } = this.props;
-    // const { productList, addToCart } = this.state;
-    // console.log(addToCart);
     return (
       <div data-testid="product">
         <Link to={ `/product/${propObj.id}` } data-testid="product-detail-link">

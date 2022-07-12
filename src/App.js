@@ -3,25 +3,17 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import ProductDetails from './components/ProductDetails';
 import Home from './components/Home';
 import Cart from './components/Cart';
-import { getProductsById } from './services/api';
 
 export default class App extends Component {
   state = {
     cartList: [],
-    // quantidade: 1,
   }
 
-  handleCartButton = async (event) => {
-    // const { cartList } = this.state;
-    const { id } = event.target;
-    console.log(id);
-    const response = await getProductsById(id);
-    // const test = 1;
-    response.qnt = 1;
+  handleCartButton = (obj) => {
     this.setState((prevState) => ({
-      cartList: [...prevState.cartList, response],
+      cartList: [...prevState.cartList, obj],
     }));
-    // console.log(response);
+    // console.log(id);
   }
 
   render() {
