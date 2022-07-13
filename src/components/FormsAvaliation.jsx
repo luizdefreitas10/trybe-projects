@@ -10,22 +10,19 @@ state = {
 
 onChange = ({ target }) => {
   const { name, value } = target;
-  // const { rating, emailForms, avaliation } = this.state;
   this.setState({
     [name]: value,
   });
-  // , () => this.setState({
-  //   saveForm: {
-  //     rating,
-  //     emailForms,
-  //     avaliation,
-  //   },
-  // })
-  // );
 }
 
-getLocal = () => {
-
+componentDidMount = () => {
+  // this.setState((prev) => (({
+  //   saveForm: [
+  //     ...prev.saveForm,
+  //     // localStorage.getItem('productCart')
+  //   ],
+  // })));
+  console.log(localStorage.getItem('productCart'));
 }
 
 saveAvaliation = (event) => {
@@ -39,11 +36,13 @@ saveAvaliation = (event) => {
   this.setState((prev) => (({
     saveForm: [...prev.saveForm, obj],
   })));
-//   localStorage.setItem('productCart', JSON.stringify(obj));
+  const { saveForm } = this.state;
+  localStorage.setItem('productCart', JSON.stringify(saveForm));
 }
 
 render() {
   const { saveForm } = this.state;
+  localStorage.setItem('productCart', JSON.stringify(saveForm));
   return (
     <div>
       <form>
@@ -121,7 +120,9 @@ render() {
         </fieldset>
       </form>
 
-      {saveForm.map((commit, index) => (
+      {/* {saveForm} */}
+
+      {JSON.parse(localStorage.getItem('productCart')).map((commit, index) => (
         <div key={ index }>
           <h3>{commit.emailForms}</h3>
           <p>{commit.rating}</p>
