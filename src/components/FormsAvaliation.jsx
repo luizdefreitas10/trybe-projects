@@ -8,24 +8,37 @@ state = {
   saveForm: [],
 }
 
+componentDidMount = () => {
+  this.recoveryStorage();
+}
+
 onChange = ({ target }) => {
   const { name, value } = target;
-  // const { rating, emailForms, avaliation } = this.state;
   this.setState({
     [name]: value,
   });
-  // , () => this.setState({
-  //   saveForm: {
-  //     rating,
-  //     emailForms,
-  //     avaliation,
-  //   },
-  // })
-  // );
 }
 
-getLocal = () => {
+addToLocalStorage = (obj) => {
+  const storage = JSON.parse(localStorage.getItem('productAvaliation'));
+  if (storage) {
+    localStorage.setItem('productAvaliation', JSON.stringify([...storage, obj]));
+  } else {
+    localStorage.setItem('productAvaliation', JSON.stringify([obj]));
+  }
+}
 
+// export const addCart = (product) => {
+//   const prev = JSON.parse(localStorage.getItem('cartItems'));
+//   if (prev) return localStorage.setItem('cartItems', JSON.stringify([...prev, product]));
+//   localStorage.setItem('cartItems', JSON.stringify([product]));
+// };
+
+recoveryStorage = () => {
+  const storage = JSON.parse(localStorage.getItem('productAvaliation'));
+  this.setState({
+    saveForm: storage,
+  });
 }
 
 saveAvaliation = (event) => {
@@ -36,10 +49,8 @@ saveAvaliation = (event) => {
     emailForms,
     avaliation,
   };
-  this.setState((prev) => (({
-    saveForm: [...prev.saveForm, obj],
-  })));
-//   localStorage.setItem('productCart', JSON.stringify(obj));
+  this.addToLocalStorage(obj);
+  this.recoveryStorage();
 }
 
 render() {
@@ -121,13 +132,15 @@ render() {
         </fieldset>
       </form>
 
-      {saveForm.map((commit, index) => (
-        <div key={ index }>
-          <h3>{commit.emailForms}</h3>
-          <p>{commit.rating}</p>
-          <p>{commit.avaliation}</p>
-        </div>
-      ))}
+      { saveForm === null
+        ? null
+        : (saveForm.map((commit, index) => (
+          <div key={ index }>
+            <h3>{commit.emailForms}</h3>
+            <p>{commit.rating}</p>
+            <p>{commit.avaliation}</p>
+          </div>
+        )))}
     </div>
   );
 }
