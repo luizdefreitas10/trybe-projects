@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { getProductsById } from '../services/api';
 import Button from './Button';
+import FormsAvaliation from './FormsAvaliation';
 
 export default class ProductDetails extends Component {
-  state ={ productCart: [] }
+  state ={
+    productCart: [],
+  }
 
   componentDidMount() {
     this.handleApi();
@@ -41,13 +44,14 @@ export default class ProductDetails extends Component {
             type="submit"
             data-testid="product-detail-add-to-cart"
             onClick={ () => handleCartButton(productCart) }
-            // id={ productCart.id }
           >
             Adicionar ao carrinho
-
           </button>
         </div>
         <Link to="/cart" data-testid="shopping-cart-button"><Button /></Link>
+
+        <hr />
+        <FormsAvaliation />
       </div>
     );
   }
