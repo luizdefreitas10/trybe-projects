@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import ProductCart from './ProductCart';
 
 class Cart extends React.Component {
   render() {
     const { cartList } = this.props;
-    console.log(cartList);
+    // console.log(cartList);
     return (
       <div>
         { cartList.length === 0 ? (
@@ -18,6 +19,10 @@ class Cart extends React.Component {
         <h3>
           { `Quantidade de produtos do carrinho: ${cartList.length}` }
         </h3>
+
+        <Link to="/checkout" data-testid="checkout-products">
+          <input type="button" value="Finalizar Compra" />
+        </Link>
       </div>
     );
   }
