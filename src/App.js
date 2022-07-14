@@ -3,6 +3,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import ProductDetails from './components/ProductDetails';
 import Home from './components/Home';
 import Cart from './components/Cart';
+import Checkout from './components/Checkout';
 
 export default class App extends Component {
   state = {
@@ -26,6 +27,7 @@ export default class App extends Component {
           render={ () => <Home handleCartButton={ this.handleCartButton } /> }
         />
         <Route path="/cart" render={ () => (<Cart cartList={ cartList } />) } />
+        <Route path="/checkout" component={ Checkout } />
         <Route
           path="/product/:id"
           render={ (props) => (<ProductDetails
