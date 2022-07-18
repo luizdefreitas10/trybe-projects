@@ -1,12 +1,11 @@
-/* eslint-disable max-len */
 import { screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import App from '../App';
 import renderWithRouter from '../renderWithRouter';
 
-describe('Verifica se existe, no topo da aplicação, um conjunto fixo de links de navegação', () => {
-  it('se existe um link com texto Home que, ao ser clicado, redireciona o usuário para a página principal da aplicação', () => {
+describe('Verifica se existe um conjunto fixo de links de navegação', () => {
+  it('se existe um link com texto Home que redireciona para a página principal', () => {
     const { history } = renderWithRouter(<App />);
 
     const homeLink = screen.getByRole('link', { name: 'Home' });
@@ -20,7 +19,7 @@ describe('Verifica se existe, no topo da aplicação, um conjunto fixo de links 
     expect(pathname).toBe('/');
   });
 
-  it('se existe um link com o texto About que, ao ser clicado, redireciona o usuário para a página de About', () => {
+  it('se existe um link com texto About que redireciona para a página About', () => {
     const { history } = renderWithRouter(<App />);
 
     const aboutLink = screen.getByRole('link', { name: 'About' });
@@ -33,7 +32,7 @@ describe('Verifica se existe, no topo da aplicação, um conjunto fixo de links 
     expect(pathname).toBe('/about');
   });
 
-  it('se existe um link com o texto Favorite Pokémons que, ao ser clicado, redireciona o usuário para a página de pokemons favoritados', () => {
+  it('existe um link com texto Favorite Pokémons que redireciona para favoritos', () => {
     const { history } = renderWithRouter(<App />);
 
     const favoriteLink = screen.getByRole('link', { name: 'Favorite Pokémons' });
