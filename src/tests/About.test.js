@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react';
 import React from 'react';
-import { About, FavoritePokemons } from '../pages';
+import { About } from '../pages';
 import renderWithRouter from '../renderWithRouter';
 
 describe('Verificando o componente About', () => {
