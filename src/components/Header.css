@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.div-header {
+  align-content: center;
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.div-nav-header {
+  align-items: center;
+  display: flex;
+  margin-right: 20px;
+}
+
+.div-header > p {
+  font-family: Pacifico, cursive;
+  margin-left: 20px;
+}
+
+.div-nav-header > h4 {
+  color: whitesmoke;
+  margin: 0 15px;
+}
