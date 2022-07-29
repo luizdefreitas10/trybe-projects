@@ -1,4 +1,4 @@
-import { REQUEST_API, RECEIVE_API } from '../actions/index';
+import { RECEIVE_API } from '../actions/index';
 
 const INITIAL_STATE = {
 

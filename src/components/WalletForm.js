@@ -16,12 +16,16 @@ class WalletForm extends Component {
     fetchApiProp();
   }
 
+  handleClick = (event) => {
+    event.preventDefault();
+  }
+
   render() {
     const { currencies } = this.props;
     // console.log(currencies);
     return (
       <div>
-        <form>
+        <form className="form-class">
           <label htmlFor="value-input">
             Despesas:
             <input
@@ -77,6 +81,13 @@ class WalletForm extends Component {
               <option value="Saúde">Saúde</option>
             </select>
           </label>
+          <button
+            type="submit"
+            onClick={ this.handleClick }
+            className="button-class"
+          >
+            Adicionar despesa
+          </button>
         </form>
       </div>
     );

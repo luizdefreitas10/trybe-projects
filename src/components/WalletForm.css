@@ -14,9 +14,14 @@ select {
 }
 
 form {
+  display: flex;
   margin-top: 15px;
 }
 
 label {
-  margin-left: 10px;
+  margin-left: 20px;
+}
+
+.button-class {
+  margin: 20px;
 }
