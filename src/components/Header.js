@@ -6,7 +6,7 @@ import './Header.css';
 class Header extends Component {
   render() {
     const { getEmail } = this.props;
-    console.log(getEmail);
+    // console.log(getEmail);
     return (
       <div className="div-header">
         <p>TrybeWallet</p>
@@ -19,7 +19,7 @@ class Header extends Component {
           <h4
             data-testid="total-field"
           >
-            Despesa total: R$ 0
+            Despesa total: $ 0
           </h4>
           <h4
             data-testid="header-currency-field"
