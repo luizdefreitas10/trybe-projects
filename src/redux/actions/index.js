@@ -2,6 +2,7 @@
 export const USER_LOGIN = 'USER_LOGIN';
 export const REQUEST_API = 'REQUEST_API';
 export const RECEIVE_API = 'RECEIVE_API';
+export const SAVE_FORM = 'SAVE_FORM';
 // export const ENDPOINT = 'https://economia.awesomeapi.com.br/json/all';
 
 export const userLoginAction = (email) => ({
@@ -16,6 +17,11 @@ export const requestApiAction = () => ({
 export const receiveApiAction = (currencies) => ({
   type: RECEIVE_API,
   payload: currencies,
+});
+
+export const saveFormData = (formData) => ({
+  type: SAVE_FORM,
+  payload: formData,
 });
 
 export const fetchCurrencies = () => async (dispatch) => {

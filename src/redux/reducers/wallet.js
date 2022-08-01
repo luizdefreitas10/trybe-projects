@@ -1,4 +1,4 @@
-import { RECEIVE_API } from '../actions/index';
+import { RECEIVE_API, SAVE_FORM } from '../actions/index';
 
 const INITIAL_STATE = {
 
@@ -16,6 +16,11 @@ function wallet(state = INITIAL_STATE, action) {
       ...state,
       currencies: action.payload,
       loading: false,
+    };
+  case SAVE_FORM:
+    return {
+      ...state,
+      expenses: [...state.expenses, action.payload],
     };
   default:
     return state;
