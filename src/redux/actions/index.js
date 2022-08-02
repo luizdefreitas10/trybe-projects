@@ -3,6 +3,7 @@ export const USER_LOGIN = 'USER_LOGIN';
 export const REQUEST_API = 'REQUEST_API';
 export const RECEIVE_API = 'RECEIVE_API';
 export const SAVE_FORM = 'SAVE_FORM';
+export const DELETE_EXPENSE = 'DELETE_EXPENSE';
 // export const ENDPOINT = 'https://economia.awesomeapi.com.br/json/all';
 
 export const userLoginAction = (email) => ({
@@ -22,6 +23,11 @@ export const receiveApiAction = (currencies) => ({
 export const saveFormData = (formData) => ({
   type: SAVE_FORM,
   payload: formData,
+});
+
+export const deleteExpenseAction = (expenseId) => ({
+  type: DELETE_EXPENSE,
+  payload: expenseId,
 });
 
 export const fetchCurrencies = () => async (dispatch) => {
