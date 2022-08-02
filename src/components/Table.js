@@ -45,6 +45,7 @@ class Table extends Component {
               <td>Real</td>
               <td>
                 <button
+                  key={ expense.id }
                   type="button"
                   data-testid="delete-btn"
                   onClick={ () => this.handleDelete(expense.id) }
