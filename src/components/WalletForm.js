@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchCurrencies, saveFormData } from '../redux/actions';
+import { fetchCurrencies, saveFormData, updateExpenseAction, deleteExpenseAction } from '../redux/actions';
 import './WalletForm.css';
 
 class WalletForm extends Component {
@@ -33,14 +33,16 @@ class WalletForm extends Component {
 
   handleClick = async (event) => {
     event.preventDefault();
+    const { saveFormProp, expenses } = this.props;
+    this.setState({
+      id: expenses.length,
+    });
     await this.fetchApiToState();
-    let { id } = this.state;
-    const { saveFormProp } = this.props;
+    // let { id } = this.state;
     saveFormProp(this.state);
     this.setState({
       description: '',
       value: '',
-      id: id += 1,
     });
   }
 
@@ -51,8 +53,33 @@ class WalletForm extends Component {
     });
   }
 
+  handleEditExpense = (event) => {
+    event.preventDefault();
+    const { expenses, idToEdit, saveEditedForm } = this.props;
+    const { value, description, currency, method, tag, exchangeRates } = this.state;
+    const currentExpense = expenses.find((expense) => expense.id === idToEdit.payload);
+    const editedInfo = {
+      value,
+      description,
+      currency,
+      method,
+      tag,
+      id: idToEdit,
+      exchangeRates: currentExpense.exchangeRates,
+    };
+    // console.log(currentExpense);
+    const replaceEditedExpense = expenses.filter((expense) => expense.id !== idToEdit.payload);
+    saveEditedForm(replaceEditedExpense);
+    const infoToDispatch = [...replaceEditedExpense, editedInfo];
+    saveEditedForm(infoToDispatch.sort((a, b) => a.id - b.id));
+    this.setState({
+      description: '',
+      value: '',
+    });
+  }
+
   render() {
-    const { currencies } = this.props;
+    const { currencies, editor } = this.props;
     const { value, description, currency, method, tag } = this.state;
     // console.log(currencies);
     return (
@@ -127,10 +154,10 @@ class WalletForm extends Component {
           </label>
           <button
             type="submit"
-            onClick={ this.handleClick }
+            onClick={ editor ? this.handleEditExpense : this.handleClick }
             className="button-class"
           >
-            Adicionar despesa
+            { editor ? 'Editar despesa' : 'Adicionar despesa' }
           </button>
         </form>
       </div>
@@ -141,11 +168,16 @@ class WalletForm extends Component {
 const mapDispatchToProps = (dispatch) => ({
   fetchApiProp: () => dispatch(fetchCurrencies()),
   saveFormProp: (state) => dispatch(saveFormData(state)),
+  deleteExpenseProp: (state) => dispatch(deleteExpenseAction(state)),
+  saveEditedForm: (state) => dispatch(updateExpenseAction(state)),
 });
 
-const mapStateToProps = ({ wallet: { currencies, loading } }) => ({
-  currencies,
-  loading,
+const mapStateToProps = (state) => ({
+  currencies: state.wallet.currencies,
+  expenses: state.wallet.expenses,
+  loading: state.wallet.loading,
+  editor: state.wallet.editor,
+  idToEdit: state.wallet.idToEdit,
 });
 
 WalletForm.propTypes = {

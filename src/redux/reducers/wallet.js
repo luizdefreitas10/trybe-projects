@@ -1,4 +1,5 @@
-import { RECEIVE_API, SAVE_FORM, DELETE_EXPENSE } from '../actions/index';
+import { RECEIVE_API,
+  SAVE_FORM, DELETE_EXPENSE, EDIT_EXPENSE, UPDATE_EXPENSE } from '../actions/index';
 
 const INITIAL_STATE = {
 
@@ -26,6 +27,18 @@ function wallet(state = INITIAL_STATE, action) {
     return {
       ...state,
       expenses: [...state.expenses].filter((expense) => expense.id !== action.payload),
+    };
+  case EDIT_EXPENSE:
+    return {
+      ...state,
+      idToEdit: action.payload,
+      editor: true,
+    };
+  case UPDATE_EXPENSE:
+    return {
+      ...state,
+      expenses: action.payload,
+      editor: false,
     };
   default:
     return state;
