@@ -70,7 +70,7 @@ class WalletForm extends Component {
       id: idToEdit,
       exchangeRates: currentExpense.exchangeRates,
     };
-    console.log(idToEdit);
+    // console.log(idToEdit);
     const replaceEditedExpense = expenses.filter((e) => e.id !== idToEdit);
     const infoToDispatch = [...replaceEditedExpense, editedInfo];
     saveEditedForm(infoToDispatch.sort((a, b) => a.id - b.id));
