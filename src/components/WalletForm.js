@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchCurrencies, saveFormData, updateExpenseAction, deleteExpenseAction } from '../redux/actions';
+import { fetchCurrencies,
+  saveFormData,
+  updateExpenseAction,
+  deleteExpenseAction } from '../redux/actions';
 import './WalletForm.css';
 
 class WalletForm extends Component {
@@ -56,7 +59,7 @@ class WalletForm extends Component {
   handleEditExpense = (event) => {
     event.preventDefault();
     const { expenses, idToEdit, saveEditedForm } = this.props;
-    const { value, description, currency, method, tag, exchangeRates } = this.state;
+    const { value, description, currency, method, tag } = this.state;
     const currentExpense = expenses.find((expense) => expense.id === idToEdit.payload);
     const editedInfo = {
       value,
@@ -64,12 +67,11 @@ class WalletForm extends Component {
       currency,
       method,
       tag,
-      id: idToEdit,
+      id: idToEdit.payload,
       exchangeRates: currentExpense.exchangeRates,
     };
     // console.log(currentExpense);
-    const replaceEditedExpense = expenses.filter((expense) => expense.id !== idToEdit.payload);
-    saveEditedForm(replaceEditedExpense);
+    const replaceEditedExpense = expenses.filter((e) => e.id !== idToEdit.payload);
     const infoToDispatch = [...replaceEditedExpense, editedInfo];
     saveEditedForm(infoToDispatch.sort((a, b) => a.id - b.id));
     this.setState({

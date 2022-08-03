@@ -49,6 +49,7 @@ class Table extends Component {
               </td>
               <td>Real</td>
               <td>
+
                 <button
                   key={ expense.id }
                   type="button"
@@ -57,8 +58,7 @@ class Table extends Component {
                 >
                   Excluir
                 </button>
-              </td>
-              <td>
+
                 <button
                   key={ expense.id }
                   type="button"
@@ -67,6 +67,7 @@ class Table extends Component {
                 >
                   Editar
                 </button>
+
               </td>
             </tr>
           </tbody>
