@@ -37,9 +37,9 @@ export const editExpenseAction = (editedExpense) => ({
   payload: editedExpense,
 });
 
-export const updateExpenseAction = (updatedExpensive) => ({
+export const updateExpenseAction = (updatedExpense) => ({
   type: UPDATE_EXPENSE,
-  payload: updatedExpensive,
+  payload: updatedExpense,
 });
 
 export const fetchCurrencies = () => async (dispatch) => {

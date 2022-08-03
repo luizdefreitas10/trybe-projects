@@ -60,18 +60,18 @@ class WalletForm extends Component {
     event.preventDefault();
     const { expenses, idToEdit, saveEditedForm } = this.props;
     const { value, description, currency, method, tag } = this.state;
-    const currentExpense = expenses.find((expense) => expense.id === idToEdit.payload);
+    const currentExpense = expenses.find((expense) => expense.id === idToEdit);
     const editedInfo = {
       value,
       description,
       currency,
       method,
       tag,
-      id: Number(idToEdit.payload),
+      id: idToEdit,
       exchangeRates: currentExpense.exchangeRates,
     };
-    // console.log(currentExpense);
-    const replaceEditedExpense = expenses.filter((e) => e.id !== idToEdit.payload);
+    console.log(idToEdit);
+    const replaceEditedExpense = expenses.filter((e) => e.id !== idToEdit);
     const infoToDispatch = [...replaceEditedExpense, editedInfo];
     saveEditedForm(infoToDispatch.sort((a, b) => a.id - b.id));
     this.setState({

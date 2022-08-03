@@ -14,7 +14,7 @@ class Table extends Component {
 
   handleEdit = (id) => {
     const { dispatchEditor } = this.props;
-    dispatchEditor(editExpenseAction(id));
+    dispatchEditor(id);
   }
 
   render() {
@@ -34,8 +34,8 @@ class Table extends Component {
             <th>Editar/Excluir</th>
           </tr>
         </thead>
-        { getFormState.map((expense, index) => (
-          <tbody key={ index }>
+        { getFormState.map((expense) => (
+          <tbody key={ expense.id }>
             <tr>
               <td>{ expense.description }</td>
               <td>{ expense.tag }</td>
@@ -51,7 +51,6 @@ class Table extends Component {
               <td>
 
                 <button
-                  key={ expense.id }
                   type="button"
                   data-testid="delete-btn"
                   onClick={ () => this.handleDelete(expense.id) }
@@ -60,7 +59,6 @@ class Table extends Component {
                 </button>
 
                 <button
-                  key={ expense.id }
                   type="button"
                   data-testid="edit-btn"
                   onClick={ () => this.handleEdit(expense.id) }
