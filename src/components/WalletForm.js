@@ -67,7 +67,7 @@ class WalletForm extends Component {
       currency,
       method,
       tag,
-      id: idToEdit.payload,
+      id: Number(idToEdit.payload),
       exchangeRates: currentExpense.exchangeRates,
     };
     // console.log(currentExpense);
