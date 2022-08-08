@@ -82,6 +82,7 @@
 // const orderFromMenu = (request) => // Lógica que adiciona à chave `consumption` de `restaurant` a string recebida no parâmetro `request`. 
 // // Essa função deve ser associada à chave `order` de `restaurant`
 // ```
+
 // Agora faça o TESTE 6 no arquivo `tests/restaurant.spec.js`.
 
 //------------------------------------------------------------------------------------------
@@ -93,6 +94,36 @@
 // - retornará o valor somado acrescido de 10%.
 // DICA: para isso, você precisará percorrer tanto o objeto da chave `food` quanto o objeto da chave `drink`.
 
-const createMenu = () => {};
+const createMenu = (menu) => {
+  const otherObj = {
+    food: ,
+    drink: ,
+    co
+  }
+  const myMenu = {
+    fetchMenu: () => menu,
+    consumption: [],
+    order: (string) => myMenu.consumption.push(string),
+    pay: () => {
+      let consumptionSum = 0;
+      for (let index = 0; index < myMenu.consumption.length - 1; index += 1) {
+        consumptionSum += parseFloat(myMenu.consumption[index]);
+      }
+      return consumptionSum; 
+      //  return consumptionSum * 0.10; 
+    },
+  };
+  myMenu.order('cerveja: 6.9');
+  myMenu.order('coxinha: 3.9');
+  console.log(myMenu.consumption);
+  console.log(myMenu.fetchMenu());
+  console.log(myMenu.pay());
+  return myMenu;
+};
+
+console.log(createMenu({
+  food: { coxinha: 3.90, sanduiche: 9.90 },
+  drinks: { agua: 3.90, cerveja: 6.90 },
+}));
 
 module.exports = createMenu;
