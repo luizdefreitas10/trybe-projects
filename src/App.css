@@ -23,14 +23,19 @@ h2 {
 
 h3 {
   color: rgb(163, 75, 245);
+  flex-wrap: wrap;
   font-family: fantasy , sans-serif;
-  font-size: 25px;
+  font-size: 27px;
+  font-weight: bolder;
+  text-decoration: underline;
 }
 
 p {
   align-items: center;
   color: white;
+  font-size: 20px;
   font-family: fantasy , sans-serif;
+  font-weight: bolder;
   text-align: center;
 }
 
@@ -87,4 +92,13 @@ img {
   align-items: center;
   display: flex;
   justify-content: center;
+}
+
+img:hover {
+  /* height: 230px; */
+  width: 230px;
+}
+
+.card:hover {
+  border: 2px solid white;
 }
