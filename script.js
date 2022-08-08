@@ -3,6 +3,7 @@ const listItens = document.getElementById("lista-tarefas");
 const inputItem = document.getElementById("texto-tarefa");
 const removeButton = document.getElementById("apaga-tudo");
 const taskButton = document.getElementById("remover-finalizados");
+const saveButton = document.getElementById("salvar-tarefas"); 
 
 
 function createLi() {
@@ -69,6 +70,17 @@ function finishTasks() {
     })
 }
 
+function buttonSave() {
+    saveButton.addEventListener('click', function (event) {
+        const itensLi = document.querySelectorAll('#lista-tarefas>li');
+        for (let index = 0; index < itensLi.length; index +=1) {
+            const elementLiIndex = itensLi[index];
+            localStorage.setItem('myData', JSON.stringify(elementLiIndex));
+        }
+            localStorage.getItem('myData');  
+    })
+}
+
 function displayAlert() {
     alert("Page loaded.")
 }
@@ -80,5 +92,6 @@ window.onload = function () {
     deleteRisk();
     removeItens();
     finishTasks();
+    buttonSave();
 }
 
