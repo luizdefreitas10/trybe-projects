@@ -1,10 +1,17 @@
 body {
-    background-color: #18162C;
+    background-color: rgb(253, 251, 251);
     margin: 0;
 }
 
 #cabecalho {
     top: 0;
+    position: fixed;
+}
+
+#cabecalho h1 {
+    color: #A78E70;
+    /* display: flex; */
+    /* text-align: center; */
 }
 
 h1 {
@@ -16,12 +23,42 @@ p {
     color: #A78E70;
     font-size: 15px;
     line-height: 20px;
+    text-align: justify;
+    margin-left: 30px;
+    margin-right: 30px;
+    bottom: 500px;
 }
 
-ol, ul, table, a {
+ol,
+ul,
+table,
+a {
     font-family: 'Montserrat', sans-serif;
     color: #A78E70;
     font-size: 15px;
+}
+
+#minha_foto {
+    border: 2px solid #A78E70;
+    border-radius: 50px;
+    width: 400px;
+    top: 30px;
+}
+
+#licoes_aprendidas, #licoes_a_aprender {
+    margin-left: 30px;
+}
+
+.div-foto {
+    display: flex;
+    justify-content:flex-end;
+    /* justify-content: center; */
+    margin: 40px 40px;
+}
+
+.section-content {
+    display: flex;
+    flex-flow: column;
 }
 
 #titulo {
@@ -30,6 +67,41 @@ ol, ul, table, a {
     background-color: #27494F;
     color: #A78E70;
 }
+
+.div-listas {
+    display: flex;
+    justify-content:space-evenly;
+}
+
+#rodape a {
+    margin: 20px;
+    /* display: inline-block; */
+    /* margin-left: 125px; */
+    background-color: #18162C;
+    color: #A78E70;
+    padding: 20px;
+    /* margin-top: 60px; */
+    /* margin-bottom: 60px; */
+    font-weight: bolder;
+    font-size: 15px;
+    border-radius: 15px;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #27494F;
+}
+
+#rodape a:hover {
+    background-color: white;
+    color: #18162C;
+}
+
+#rodape {
+    margin: 40px 0px 20px;
+}
+/* 
 
 #minha_foto {
     border: 2px solid #A78E70;
@@ -40,17 +112,7 @@ ol, ul, table, a {
     top: 30px;
 }
 
-#rodape a {
-    margin: 20px;
-    display: inline-block;
-    margin-left: 125px;
-    background-color: #27494F;
-    padding: 20px;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    font-weight: bolder;
-    font-size: 15px;
-}
+
 
 .table-content {
     border: 2px solid #27494F);
@@ -58,27 +120,13 @@ ol, ul, table, a {
     margin-top: 40px;
 }
 
-.div-content {
-    height: 560px;
-}
 
-.div-content p {
-    margin-left: 650px; 
-    text-align: justify;
-    margin-right: 30px;
-    position: relative;
-    bottom: 500px;
-}
 
-#licoes_aprendidas, #licoes_a_aprender {
-    margin-left: 650px;
-    position: relative;
-    bottom: 500px;
-}
+
 
 .aclass-margin p {
     margin-left: 30px;
     text-align: justify;
     margin-right: 30px;
 }
-
+ */
