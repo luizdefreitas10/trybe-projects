@@ -91,6 +91,20 @@ class App extends React.Component {
       });
     } else {
       this.setState({
+        savedCardsList,
+      });
+    }
+  }
+
+  handleRareFilter =(event) => {
+    const { savedCardsList, filterName } = this.state;
+    const { value } = event.target;
+    if (value !== 'todas') {
+      this.setState({
+        savedCardsList: savedCardsList.filter((c) => c.rareInput === value),
+      });
+    } else {
+      this.setState({
         savedCardsList: filterName,
       });
     }
@@ -155,6 +169,18 @@ class App extends React.Component {
               placeholder="Nome da carta"
               onChange={ this.handleFilterName }
             />
+          </label>
+          <label htmlFor="select-filter">
+            <select
+              id="select-filter"
+              data-testid="rare-filter"
+              onChange={ this.handleRareFilter }
+            >
+              <option value="todas">todas</option>
+              <option value="normal">normal</option>
+              <option value="raro">raro</option>
+              <option value="muito raro">muito raro</option>
+            </select>
           </label>
           <div className="div-card-button">
             { savedCardsList.map((c) => (
